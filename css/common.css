@@ -4,15 +4,10 @@ You may not copy, reproduce, republish, disassemble, decompile, reverse engineer
 make available to the public any content or code on this website without prior written permission from Feed.
 ******************************************************************************************************************/
 
-/*.carousel-inner {
-    overflow: visible;
-    height: 700px;
-}*/
-
-/*.dropdown-header {
+.heading {
+  font-family: sans-serif;
   font-weight: bold;
-  font-size: 14px;
-}*/
+}
 
 .stack-gap {
   margin-bottom: 5px !important;
