@@ -1,0 +1,46 @@
+//*****************************************************************************************************************
+// Copyright � 2014 - 2016 Feed. All rights reserved.
+// You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
+// make available to the public any content or code on this website without prior written permission from Feed.
+//*****************************************************************************************************************
+
+'use strict';
+
+var app = angular.module('feed', [
+  'ngRoute',
+  'MainController',
+  'ContactController',
+  'Filters'
+]);
+
+app.config(
+    function ($routeProvider) {
+        $routeProvider.
+            when('/', {
+                templateUrl: 'views/home.html',
+                controller: 'MainCtrl'
+            }).
+            when('/about', {
+                templateUrl: 'views/about.html',
+                controller: 'MainCtrl'
+            }).
+            when('/contact', {
+                templateUrl: 'views/contact.html',
+                controller: 'ContactCtrl'
+            }).
+            when('/privacy', {
+                templateUrl: 'views/privacy.html',
+                controller: 'MainCtrl'
+            }).
+            when('/terms', {
+                templateUrl: 'views/terms.html',
+                controller: 'MainCtrl'
+            }).
+            when('/notfound', {
+                templateUrl: 'views/notfound.html',
+                controller: 'MainCtrl'
+            }).
+            otherwise({
+                redirectTo: '/'
+            });
+  });
