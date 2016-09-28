@@ -40,6 +40,14 @@ app.config(
                 templateUrl: 'views/notfound.html',
                 controller: 'MainCtrl'
             }).
+            when('/success', {
+                templateUrl: 'views/success.html',
+                controller: 'MainCtrl'
+            }).
+            when('/cancel', {
+                templateUrl: 'views/cancel.html',
+                controller: 'MainCtrl'
+            }).
             otherwise({
                 redirectTo: '/'
             });
