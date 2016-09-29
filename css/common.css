@@ -4,10 +4,13 @@ You may not copy, reproduce, republish, disassemble, decompile, reverse engineer
 make available to the public any content or code on this website without prior written permission from Feed.
 ******************************************************************************************************************/
 
+.social {
+  margin-bottom: 20px;
+}
+
 .btn-pad {
   margin-top: 27px;
   margin-bottom: 25px;
-}
 }
 
 .heading {
