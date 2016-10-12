@@ -24,6 +24,10 @@ app.config(
                 templateUrl: 'views/about.html',
                 controller: 'MainCtrl'
             }).
+            when('/chanthu', {
+                templateUrl: 'views/chanthu.html',
+                controller: 'MainCtrl'
+            }).
             when('/contact', {
                 templateUrl: 'views/contact.html',
                 controller: 'ContactCtrl'
