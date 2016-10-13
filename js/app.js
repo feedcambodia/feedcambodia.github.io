@@ -28,6 +28,10 @@ app.config(
                 templateUrl: 'views/chanthu.html',
                 controller: 'MainCtrl'
             }).
+            when('/yoeut', {
+                templateUrl: 'views/yoeut.html',
+                controller: 'MainCtrl'
+            }).
             when('/contact', {
                 templateUrl: 'views/contact.html',
                 controller: 'ContactCtrl'
