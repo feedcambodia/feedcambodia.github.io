@@ -13,3 +13,21 @@ fil.filter('stringify', function () {
         return JSON.stringify(input);
     };
 });
+
+fil.filter('thumb', function () {
+    return function (input) {
+        if (input.indexOf('s72') > -1)
+            return input.replace('s72', 's250');
+        else
+            return input;
+    };
+});
+
+fil.filter('full', function () {
+    return function (input) {
+        if (input.indexOf('s72') > -1)
+            return input.replace('s72', 's2048');
+        else
+            return input;
+    };
+});

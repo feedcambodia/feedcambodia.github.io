@@ -4,6 +4,12 @@ You may not copy, reproduce, republish, disassemble, decompile, reverse engineer
 make available to the public any content or code on this website without prior written permission from Feed.
 ******************************************************************************************************************/
 
+.thumb {
+  max-width: 140px;
+  margin: 10px;
+  vertical-align: top;
+}
+
 .psize {
   font-size: 16px;
 }

@@ -10,6 +10,7 @@ var app = angular.module('feed', [
   'ngRoute',
   'MainController',
   'ContactController',
+  'PhotoController',
   'Filters'
 ]);
 
@@ -31,6 +32,10 @@ app.config(
             when('/yoeut', {
                 templateUrl: 'views/yoeut.html',
                 controller: 'MainCtrl'
+            }).
+            when('/photos', {
+                templateUrl: 'views/photo.html',
+                controller: 'PhotoCtrl'
             }).
             when('/contact', {
                 templateUrl: 'views/contact.html',
