@@ -1,0 +1,26 @@
+<!--*****************************************************************************************************************
+     Copyright © 2016 Feed. All rights reserved.
+     You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
+     make available to the public any content or code on this website without prior written permission from Feed.
+    *****************************************************************************************************************-->
+
+<title>Feed | Photos</title>
+<meta name="description" content="Our photo gallery." />
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h3>
+        Photo Gallery
+      </h3>
+      <span ng-repeat="item in photos.feed.entry" class="img-thumbnail thumb">
+        <a href="{{item.media$group.media$thumbnail[0].url | full}}">
+          <img ng-src="{{item.media$group.media$thumbnail[0].url | thumb}}" alt="{{item.summary.$t}}" class="img-responsive"/>
+        </a>
+        <div class="caption">
+          {{item.summary.$t}}
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
