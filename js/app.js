@@ -33,6 +33,10 @@ app.config(
                 templateUrl: 'views/yoeut.html',
                 controller: 'MainCtrl'
             }).
+            when('/chetra', {
+                templateUrl: 'views/chetra.html',
+                controller: 'MainCtrl'
+            }).
             when('/photos', {
                 templateUrl: 'views/photo.html',
                 controller: 'PhotoCtrl'

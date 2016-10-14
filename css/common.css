@@ -10,7 +10,7 @@ make available to the public any content or code on this website without prior w
   vertical-align: top;
 }
 
-.psize {
+.psize p {
   font-size: 16px;
 }
 
@@ -160,7 +160,7 @@ input[type=range] {
 }
 
 .imgMaxHeight {
-    max-height: 750px;
+    max-height: 600px;
 }
 
 /*.embed-responsive {
