@@ -31,7 +31,7 @@ res.factory('LogResource', function ($resource) {
 res.factory('PicasaAlbumFeedResource', function ($resource) {
   return function (albumId) {
     var resource = 'https://picasaweb.google.com/data/feed/api/user/112973952418146798615/albumid/' + albumId;
-    return $resource('https://' + location.hostname + ':8000/other', {}, {
+    return $resource('https://lahuna.com:8000/other', {}, {
       Get: {
         method: 'GET',
         params: { 'resource': resource, 'alt': 'json' }
