@@ -4,6 +4,57 @@ You may not copy, reproduce, republish, disassemble, decompile, reverse engineer
 make available to the public any content or code on this website without prior written permission from Feed.
 ******************************************************************************************************************/
 
+body {
+  background-color: #b0dfe8;
+}
+
+.jumbotron {
+  background-color: #d7eff4;
+  padding-top: 10px !important;
+  padding-bottom: 30px !important;
+  margin-bottom: 10px !important;
+  text-align: center;
+}
+
+.div {
+  background-color: #d7eff4;
+  border-radius: 5px;
+  padding: 20px;
+  padding-bottom: 10px !important;
+}
+
+.div-margin {
+  margin-right: 20px;
+  margin-bottom: 20px;
+  max-width: 225px;
+}
+
+.img-thumbnail {
+  background-color: #d7eff4;
+}
+
+.box {
+  background-color: #d7eff4;
+}
+
+.main {
+  text-align:center;
+  font-weight: bold;
+  background-color: #d7eff4;
+}
+
+.footer {
+  background-color: #d7eff4;
+}
+
+input, textarea, .btn-default, .list-group-item {
+  background-color: #ebf7f9 !important;
+}
+
+.martop {
+  margin-top: 10px;
+}
+
 .thumb {
   max-width: 140px;
   margin: 10px;
@@ -15,7 +66,9 @@ make available to the public any content or code on this website without prior w
 }
 
 .social {
-  margin-bottom: 20px;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 20px !important;
 }
 
 .btn-pad {
