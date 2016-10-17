@@ -54,6 +54,10 @@ app.config(
                 templateUrl: 'views/video.html',
                 controller: 'PhotoCtrl'
             }).
+            when('/social', {
+                templateUrl: 'views/social.html',
+                controller: 'MainCtrl'
+            }).
             when('/budget', {
                 templateUrl: 'views/budget.html',
                 controller: 'MainCtrl'
