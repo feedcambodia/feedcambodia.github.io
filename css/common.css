@@ -23,9 +23,20 @@ body {
   padding-bottom: 10px !important;
 }
 
+.btn-margin {
+  margin-bottom: 5px;
+  margin-left: 10px;
+}
+
 .div-margin {
-  margin-right: 20px;
   margin-bottom: 20px;
+}
+
+.div-margin-right {
+  margin-right: 20px;
+}
+
+.div-width {
   max-width: 225px;
 }
 
@@ -87,6 +98,10 @@ input, textarea, .btn-default, .list-group-item {
 
 .inline-block {
   display: inline-block;
+}
+
+.inline {
+  display: inline !important;
 }
 
 .img-center {

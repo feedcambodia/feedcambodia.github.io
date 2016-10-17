@@ -11,6 +11,7 @@ var app = angular.module('feed', [
   'MainController',
   'ContactController',
   'PhotoController',
+  'MediaController',
   'Filters'
 ]);
 
@@ -25,6 +26,10 @@ app.config(
                 templateUrl: 'views/about.html',
                 controller: 'MainCtrl'
             }).
+            when('/organization', {
+                templateUrl: 'views/organization.html',
+                controller: 'MainCtrl'
+            }).
             when('/chanthu', {
                 templateUrl: 'views/chanthu.html',
                 controller: 'MainCtrl'
@@ -37,9 +42,25 @@ app.config(
                 templateUrl: 'views/chetra.html',
                 controller: 'MainCtrl'
             }).
-            when('/photos', {
+            when('/ouw', {
+                templateUrl: 'views/ouw.html',
+                controller: 'MainCtrl'
+            }).
+            when('/photo', {
                 templateUrl: 'views/photo.html',
                 controller: 'PhotoCtrl'
+            }).
+            when('/video', {
+                templateUrl: 'views/video.html',
+                controller: 'PhotoCtrl'
+            }).
+            when('/budget', {
+                templateUrl: 'views/budget.html',
+                controller: 'MainCtrl'
+            }).
+            when('/media/:src', {
+                templateUrl: 'views/media.html',
+                controller: 'MediaCtrl'
             }).
             when('/contact', {
                 templateUrl: 'views/contact.html',
