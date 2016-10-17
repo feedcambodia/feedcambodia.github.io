@@ -63,7 +63,7 @@ input, textarea, .btn-default, .list-group-item {
 }
 
 .martop {
-  margin-top: 10px;
+  margin-top: 0px !important;
 }
 
 .thumb {

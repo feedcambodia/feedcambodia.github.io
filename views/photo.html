@@ -5,14 +5,20 @@
     *****************************************************************************************************************-->
 
 <title>Feed | Photos</title>
-<meta name="description" content="Our photo gallery." />
+<meta name="description" content="Our photo album." />
 
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <h3>
-        Chanthu's Photo Album
-      </h3>
+      <div class="div">
+        <h3 class="martop">
+          Photo Album
+        </h3>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
       <span ng-repeat="item in photos.feed.entry" class="img-thumbnail thumb">
         <a href="{{item.media$group.media$thumbnail[0].url | full}}">
           <img ng-src="{{item.media$group.media$thumbnail[0].url | thumb}}" alt="{{item.summary.$t}}" class="img-responsive"/>
