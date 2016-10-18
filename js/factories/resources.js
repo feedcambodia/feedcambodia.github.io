@@ -39,3 +39,15 @@ res.factory('PicasaAlbumFeedResource', function ($resource) {
     });
   }
 });
+
+res.factory('YoutubeResource', function ($resource) {
+  return function () {
+    var resource = 'https://www.googleapis.com/youtube/v3/playlists';
+    return $resource('https://lahuna.com:8000/other', {}, {
+      Get: {
+        method: 'GET',
+        params: { 'resource': resource }
+      }
+    });
+  }
+});

@@ -72,6 +72,12 @@ input, textarea, .btn-default, .list-group-item {
   vertical-align: top;
 }
 
+.thumb-video {
+  max-width: 130px;
+  margin: 10px;
+  vertical-align: top;
+}
+
 .psize p {
   font-size: 16px;
 }

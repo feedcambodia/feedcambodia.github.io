@@ -11,6 +11,8 @@ var app = angular.module('feed', [
   'MainController',
   'ContactController',
   'PhotoController',
+  'VideoController',
+  'PlayerController',
   'MediaController',
   'Filters'
 ]);
@@ -52,7 +54,11 @@ app.config(
             }).
             when('/video', {
                 templateUrl: 'views/video.html',
-                controller: 'PhotoCtrl'
+                controller: 'VideoCtrl'
+            }).
+            when('/player/:playlistId', {
+                templateUrl: 'views/player.html',
+                controller: 'PlayerCtrl'
             }).
             when('/social', {
                 templateUrl: 'views/social.html',

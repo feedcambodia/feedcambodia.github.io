@@ -10,24 +10,27 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <div class="div">
+      <div class="div psize">
         <h3 class="martop">
           Videos
         </h3>
-        <p class="psize">
-          Here is a 4-part video series on Pol Pot, the leader of the Khmer Rouge. This gives a good history
-          of what Cambodian life was like during that time period.
+        <p>
+          Here are some videos explaining Cambodia's history during the Pol Pot Khmer Rouge
+          regime. They show what life was like for Chanthu and her family during that time period.
         </p>
       </div>
     </div>
   </div>
   <div class="row">
-      <div class="col-md-12">
-        <div class="embed-responsive embed-responsive-16by9">
-          <iframe width="854" height="480"
-          src="https://www.youtube.com/embed/jtn7ar95NYY?list=PL9zeshdpznO17NQopiPE4Sw5X1bddX3AH"
-          frameborder="0" allowfullscreen></iframe>
+    <div class="col-md-12">
+      <span ng-repeat="item in videos.items" class="img-thumbnail thumb-video">
+        <a href="#/player/{{item.id}}">
+          <img ng-src="{{item.snippet.thumbnails.default.url | thumb}}" alt="{{item.snippet.title}}" class="img-responsive"/>
+        </a>
+        <div class="caption">
+          {{item.snippet.title}}
         </div>
-      </div>
+      </span>
+    </div>
   </div>
 </div>

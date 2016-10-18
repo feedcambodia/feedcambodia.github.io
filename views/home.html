@@ -29,8 +29,9 @@
           </form>
         </div>
         <div class="row social">
+
           <div id="fb-root"></div>
-          <script>(function(d, s, id) {
+          <!--<script>(function(d, s, id) {
               var js, fjs = d.getElementsByTagName(s)[0];
               if (d.getElementById(id)) return;
               js = d.createElement(s); js.id = id;
@@ -38,7 +39,16 @@
               js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1417261691879442";
               fjs.parentNode.insertBefore(js, fjs);
             }(document, 'script', 'facebook-jssdk'));
-          </script>
+          </script>-->
+
+          <script>(function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
+            fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));</script>
+
           <div class="fb-like"
             data-href="https://feedcambodia.com"
             data-layout="button_count"
@@ -46,6 +56,12 @@
             data-show-faces="false"
             data-share="true">
           </div>
+          <!--<div class="fb-follow"
+            data-href="https://www.facebook.com/feedcambodia1"
+            data-layout="standard"
+            data-size="small"
+            data-show-faces="false">
+          </div>-->
         </div>
         <div class="row social">
           <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
