@@ -23,7 +23,7 @@
   </div>
   <div class="row">
     <div class="col-md-12">
-      <span ng-repeat="item in videos.items" class="img-thumbnail thumb-video">
+      <span ng-repeat="item in videos.items | orderBy : 'snippet.title'" class="img-thumbnail thumb-video">
         <a href="#/player/{{item.id}}">
           <img ng-src="{{item.snippet.thumbnails.default.url | thumb}}" alt="{{item.snippet.title}}" class="img-responsive"/>
         </a>
