@@ -19,7 +19,7 @@ res.factory('EmailResource', function ($resource) {
 
 // Log
 res.factory('LogResource', function ($resource) {
-  return $resource('https://localhost:8000/log', {}, {
+  return $resource('https://lahuna.com:8000/log', {}, {
     Get: {
       method: 'GET'
     },
