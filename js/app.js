@@ -13,6 +13,7 @@ var app = angular.module('feed', [
   'PhotoController',
   'VideoController',
   'PlayerController',
+  'LogController',
   'MediaController',
   'Filters'
 ]);
@@ -95,6 +96,10 @@ app.config(
             when('/cancel', {
                 templateUrl: 'views/cancel.html',
                 controller: 'MainCtrl'
+            }).
+            when('/log', {
+                templateUrl: 'views/log.html',
+                controller: 'LogCtrl'
             }).
             otherwise({
                 redirectTo: '/'

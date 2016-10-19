@@ -9,7 +9,9 @@
 var ctl = angular.module('PlayerController', ['Resources']);
 
 ctl.controller('PlayerCtrl', function ($scope, $routeParams, $sce, $location, LogResource) {
-  LogResource($location.$$path).Post();
+  LogResource.Post({
+    'path': $location.$$path
+  });
   var playlistId = $routeParams.playlistId;
   $scope.videoUrl = $sce.trustAsResourceUrl("https://www.youtube.com/embed?listType=playlist&list=" + playlistId);
 });

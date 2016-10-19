@@ -19,13 +19,17 @@ res.factory('EmailResource', function ($resource) {
 
 // Log
 res.factory('LogResource', function ($resource) {
-  return function (path) {
-    return $resource('https://lahuna.com:8000/log' + path, {}, {
-      Post: {
-        method: 'POST'
-      }
-    });
-  }
+  return $resource('https://localhost:8000/log', {}, {
+    Get: {
+      method: 'GET'
+    },
+    Post: {
+      method: 'POST'
+    },
+    Delete: {
+      method: 'DELETE'
+    }
+  });
 });
 
 res.factory('PicasaAlbumFeedResource', function ($resource) {

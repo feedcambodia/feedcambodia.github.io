@@ -9,6 +9,8 @@
 var ctl = angular.module('MediaController', ['Resources']);
 
 ctl.controller('MediaCtrl', function ($scope, $routeParams, $location, LogResource) {
-  LogResource($location.$$path).Post();
+  LogResource.Post({
+    'path': $location.$$path
+  });
   $scope.src = $routeParams.src;
 });

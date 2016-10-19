@@ -30,4 +30,10 @@ fil.filter('full', function () {
         else
             return input;
     };
-});
+})
+
+fil.filter('date', function () {
+    return function (input) {
+        return new Date(input).toLocaleString();
+    };
+});;

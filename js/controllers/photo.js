@@ -8,11 +8,14 @@
 
 var ctl = angular.module('PhotoController', ['Resources']);
 
-ctl.controller('PhotoCtrl', function ($scope, $routeParams, $location, LogResource, PicasaAlbumFeedResource) {
-  LogResource($location.$$path).Post();
+ctl.controller('PhotoCtrl', function ($scope, $routeParams, $location, PicasaAlbumFeedResource, LogResource) {
   $scope.photos = PicasaAlbumFeedResource('6340765808908508833').Get({
     'kind': 'photo',
     'start-index': 1,
     'max-results': 50
+  });
+
+  LogResource.Post({
+    'path': $location.$$path
   });
 });
