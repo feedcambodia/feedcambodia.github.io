@@ -12,7 +12,7 @@ var res = angular.module('Resources', ['ngResource']);
 res.factory('EmailResource', function ($resource) {
   var host = location.hostname;
   if (host == 'feedcambodia.com') {
-    host = 'https://lahuna.com';
+    host = 'lahuna.com';
   }
   return $resource('https://' + host + ':8000/email', {}, {
     Send: {
@@ -25,7 +25,7 @@ res.factory('EmailResource', function ($resource) {
 res.factory('LogResource', function ($resource) {
   var host = location.hostname;
   if (host == 'feedcambodia.com') {
-    host = 'https://lahuna.com';
+    host = 'lahuna.com';
   }
   return $resource('https://' + host + ':8000/log', {}, {
     Get: {
@@ -43,7 +43,7 @@ res.factory('LogResource', function ($resource) {
 res.factory('PicasaAlbumFeedResource', function ($resource) {
   var host = location.hostname;
   if (host == 'feedcambodia.com') {
-    host = 'https://lahuna.com';
+    host = 'lahuna.com';
   }
   return function (albumId) {
     var resource = 'https://picasaweb.google.com/data/feed/api/user/112973952418146798615/albumid/' + albumId;
@@ -59,7 +59,7 @@ res.factory('PicasaAlbumFeedResource', function ($resource) {
 res.factory('YoutubeResource', function ($resource) {
   var host = location.hostname;
   if (host == 'feedcambodia.com') {
-    host = 'https://lahuna.com';
+    host = 'lahuna.com';
   }
   return function () {
     var resource = 'https://www.googleapis.com/youtube/v3/playlists';
