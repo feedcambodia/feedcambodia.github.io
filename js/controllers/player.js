@@ -12,6 +12,7 @@ ctl.controller('PlayerCtrl', function ($scope, $routeParams, $sce, $location, Lo
   LogResource.Post({
     'path': $location.$$path
   });
+
   var playlistId = $routeParams.playlistId;
   $scope.videoUrl = $sce.trustAsResourceUrl("https://www.youtube.com/embed?listType=playlist&list=" + playlistId);
 });
