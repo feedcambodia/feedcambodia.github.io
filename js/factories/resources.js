@@ -10,7 +10,11 @@ var res = angular.module('Resources', ['ngResource']);
 
 // Send Email
 res.factory('EmailResource', function ($resource) {
-  return $resource('https://lahuna.com:8000/email', {}, {
+  var host = location.hostname;
+  if (host == 'feedcambodia.com') {
+    host = 'https://lahuna.com';
+  }
+  return $resource('https://' + host + ':8000/email', {}, {
     Send: {
         method: 'GET'
     }
@@ -19,7 +23,11 @@ res.factory('EmailResource', function ($resource) {
 
 // Log
 res.factory('LogResource', function ($resource) {
-  return $resource('https://lahuna.com:8000/log', {}, {
+  var host = location.hostname;
+  if (host == 'feedcambodia.com') {
+    host = 'https://lahuna.com';
+  }
+  return $resource('https://' + host + ':8000/log', {}, {
     Get: {
       method: 'GET'
     },
@@ -33,9 +41,13 @@ res.factory('LogResource', function ($resource) {
 });
 
 res.factory('PicasaAlbumFeedResource', function ($resource) {
+  var host = location.hostname;
+  if (host == 'feedcambodia.com') {
+    host = 'https://lahuna.com';
+  }
   return function (albumId) {
     var resource = 'https://picasaweb.google.com/data/feed/api/user/112973952418146798615/albumid/' + albumId;
-    return $resource('https://lahuna.com:8000/other', {}, {
+    return $resource('https://' + host + ':8000/other', {}, {
       Get: {
         method: 'GET',
         params: { 'resource': resource, 'alt': 'json' }
@@ -45,9 +57,13 @@ res.factory('PicasaAlbumFeedResource', function ($resource) {
 });
 
 res.factory('YoutubeResource', function ($resource) {
+  var host = location.hostname;
+  if (host == 'feedcambodia.com') {
+    host = 'https://lahuna.com';
+  }
   return function () {
     var resource = 'https://www.googleapis.com/youtube/v3/playlists';
-    return $resource('https://lahuna.com:8000/other', {}, {
+    return $resource('https://' + host + ':8000/other', {}, {
       Get: {
         method: 'GET',
         params: { 'resource': resource }
