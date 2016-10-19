@@ -9,17 +9,25 @@
 var ctl = angular.module('LogController', ['Resources']);
 
 ctl.controller('LogCtrl', function ($scope, $routeParams, $location, LogResource) {
-  $scope.log = LogResource.Get();
+  var ip = $routeParams.ip;
+  $scope.ip = ip;
+  $scope.log = LogResource.Get({
+    'type': 'log',
+    'ip': ip
+  });
 
   $scope.delete = function(index, id) {
     $scope.log.list.splice(index, 1);
     LogResource.Delete({
-      '_id': id
+      '_id': id,
+      'type': 'log'
     });
   }
 
   $scope.deleteAll = function() {
     $scope.log = undefined;
-    LogResource.Delete();
+    LogResource.Delete({
+      'type': 'log'
+    });
   }
 });

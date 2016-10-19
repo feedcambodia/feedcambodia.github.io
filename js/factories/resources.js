@@ -29,13 +29,16 @@ res.factory('LogResource', function ($resource) {
   }
   return $resource('https://' + host + ':8000/log', {}, {
     Get: {
-      method: 'GET'
+      method: 'GET',
+      params: { 'site': location.hostname }
     },
     Post: {
-      method: 'POST'
+      method: 'POST',
+      params: { 'site': location.hostname }
     },
     Delete: {
-      method: 'DELETE'
+      method: 'DELETE',
+      params: { 'site': location.hostname }
     }
   });
 });

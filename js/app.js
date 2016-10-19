@@ -14,6 +14,7 @@ var app = angular.module('feed', [
   'VideoController',
   'PlayerController',
   'LogController',
+  'IpController',
   'MediaController',
   'Filters'
 ]);
@@ -100,6 +101,18 @@ app.config(
             when('/log', {
                 templateUrl: 'views/log.html',
                 controller: 'LogCtrl'
+            }).
+            when('/log/:ip', {
+                templateUrl: 'views/log.html',
+                controller: 'LogCtrl'
+            }).
+            when('/ip', {
+                templateUrl: 'views/ip.html',
+                controller: 'IpCtrl'
+            }).
+            when('/ip/:ip', {
+                templateUrl: 'views/ip.html',
+                controller: 'IpCtrl'
             }).
             otherwise({
                 redirectTo: '/'
