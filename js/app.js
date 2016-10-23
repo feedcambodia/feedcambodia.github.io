@@ -20,7 +20,7 @@ var app = angular.module('feed', [
 ]);
 
 app.config(
-    function ($routeProvider) {
+    function ($routeProvider, $locationProvider) {
         $routeProvider.
             when('/', {
                 templateUrl: 'views/home.html',
@@ -121,4 +121,6 @@ app.config(
             otherwise({
                 redirectTo: '/'
             });
+
+          $locationProvider.html5Mode(true);
   });
