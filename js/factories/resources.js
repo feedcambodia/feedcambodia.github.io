@@ -59,7 +59,7 @@ res.factory('PicasaAlbumFeedResource', function ($resource) {
   }
 });
 
-res.factory('YoutubeResource', function ($resource) {
+res.factory('PlaylistResource', function ($resource) {
   var host = location.hostname;
   if (host == 'feedcambodia.com') {
     host = 'lahuna.com';

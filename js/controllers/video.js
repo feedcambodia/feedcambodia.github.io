@@ -8,15 +8,14 @@
 
 var ctl = angular.module('VideoController', ['Resources']);
 
-ctl.controller('VideoCtrl', function ($scope, $routeParams, $location, YoutubeResource, LogResource) {
+ctl.controller('VideoCtrl', function ($scope, $routeParams, $location, PlaylistResource, LogResource) {
   LogResource.Post({
     'path': $location.$$path
   });
 
-  $scope.videos = YoutubeResource().Get({
+  $scope.videos = PlaylistResource().Get({
     'part': 'snippet',
     'channelId': 'UCO3EB-nz80N1VHyYaG81G3A',
-    'maxResults': 50,
-    'key': 'AIzaSyAhXUfc4ISI65ORq9BAUgrNTehsV6f_oIk'
+    'maxResults': 50
   });
 });

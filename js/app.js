@@ -66,6 +66,10 @@ app.config(
                 templateUrl: 'views/social.html',
                 controller: 'MainCtrl'
             }).
+            when('/share', {
+                templateUrl: 'views/share.html',
+                controller: 'MainCtrl'
+            }).
             when('/budget', {
                 templateUrl: 'views/budget.html',
                 controller: 'MainCtrl'

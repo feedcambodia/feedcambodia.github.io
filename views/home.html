@@ -13,14 +13,16 @@
       <div>
         <h1>Feed Cambodia</h1>
         <h3>Let's work together to help those in need</h3>
-        <a href="#/about"><span class="btn btn-default btn-margin">About Us</span></a>
-        <a href="#/contact"><span class="btn btn-default btn-margin">Contact Us</span></a>
-        <a href="#/social"><span class="btn btn-default btn-margin">Find Us</span></a>
+        <div class="btn-margin-top">
+          <a href="#/about"><span class="btn btn-default btn-margin">About Us</span></a>
+          <a href="#/contact"><span class="btn btn-default btn-margin">Contact Us</span></a>
+          <a href="#/social"><span class="btn btn-default btn-margin">Find Us</span></a>
+        </div>
       </div>
     </div>
     <div class="col-sm-3 col-sm-offset-1 div">
       <div>
-        <div class="row social">
+        <div class="row social text-center">
           <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
             <input type="hidden" name="cmd" value="_s-xclick">
             <input type="hidden" name="hosted_button_id" value="6FW3KSC96K65W">
@@ -28,55 +30,15 @@
             <img alt="Donate with Paypal" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
           </form>
         </div>
-        <div class="row social">
-
-          <div id="fb-root"></div>
-          <!--<script>(function(d, s, id) {
-              var js, fjs = d.getElementsByTagName(s)[0];
-              if (d.getElementById(id)) return;
-              js = d.createElement(s); js.id = id;
-              js.async=true;
-              js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.5&appId=1417261691879442";
-              fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-          </script>-->
-
-          <script>(function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) return;
-            js = d.createElement(s); js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8";
-            fjs.parentNode.insertBefore(js, fjs);
-          }(document, 'script', 'facebook-jssdk'));</script>
-
+        <div class="row social text-center">
           <div class="fb-like"
             data-href="https://feedcambodia.com"
             data-layout="button_count"
             data-action="like"
             data-show-faces="false"
-            data-share="true">
+            data-size="large"
+            data-share="false">
           </div>
-          <!--<div class="fb-follow"
-            data-href="https://www.facebook.com/feedcambodia1"
-            data-layout="standard"
-            data-size="small"
-            data-show-faces="false">
-          </div>-->
-        </div>
-        <div class="row social">
-          <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-            if(!d.getElementById(id)){js=d.createElement(s);
-            js.id=id;js.src=p+'://platform.twitter.com/widgets.js';
-            js.async=true;
-            fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
-          </script>
-          <a href="https://twitter.com/share"
-             class="twitter-share-button"
-             data-url="https://feedcambodia.com"
-             data-text="Help those in need"
-             data-via="Feed"
-             data-related="Feed"
-             data-hashtags="feedcambodia">Tweet</a>
         </div>
         <!--<div class="fb-follow" data-href="https://www.facebook.com/Jon-Juano-Davison-250766964978678" data-layout="button_count" data-show-faces="true"></div>-->
       </div>
@@ -86,7 +48,7 @@
       <div class="col-md-10 col-md-offset-1 div">
         <span class="text-center center-block">
           <h4 class="inline">A Cambodian woman named Ouw needs our help buying a bed</h4>
-          <a href="#/ouw"><span class="btn btn-default btn-margin">Learn More</span></a>
+          <a href="#/ouw"><span class="btn btn-default btn-margin learn">Learn More</span></a>
         </span>
           <a href="#/ouw">
             <img src="https://lh3.googleusercontent.com/-o-dwizxg3G4/WAJj23_P2MI/AAAAAAAAAQA/i1jBB3L44LMqb9LlowY59tMfCIgTmAxDgCHM/s800/received_343606625985414.jpeg"
@@ -100,3 +62,15 @@
       </div>
     </div>-->
 </div>
+
+<div id="fb-root"></div>
+<script>
+  FB = null;
+  (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    //if (d.getElementById(id)) return;
+    js = d.createElement(s); js.id = id;
+    js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.8&appId=1752915584981927";
+    fjs.parentNode.insertBefore(js, fjs);
+  }(document, 'script', 'facebook-jssdk'));
+</script>

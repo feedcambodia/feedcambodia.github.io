@@ -8,10 +8,28 @@ body {
   background-color: #b0dfe8;
 }
 
+.div-home {
+  max-width: 200px;
+  height: 185px;
+}
+
+.list-group-item {
+  margin: 10px;
+  background-color: #ebf7f9;
+}
+
+.martop1 {
+  margin-top: 7px;
+}
+
+.fb-follow {
+  margin-top: 5px;
+}
+
 .jumbotron {
   background-color: #d7eff4;
   padding-top: 10px !important;
-  padding-bottom: 30px !important;
+  padding-bottom: 20px !important;
   margin-bottom: 10px !important;
   text-align: center;
 }
@@ -20,7 +38,12 @@ body {
   background-color: #d7eff4;
   border-radius: 5px;
   padding: 20px;
-  padding-bottom: 10px !important;
+  padding-bottom: 14px !important;
+}
+
+.div-pad {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 
 .btn-margin {
@@ -28,12 +51,38 @@ body {
   margin-left: 10px;
 }
 
+.btn-margin-top {
+  margin-top: 20px;
+}
+
+.learn {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.btn-home {
+  margin-top: 5px;
+  margin-bottom: 5px;
+  min-width: 100px;
+}
+
+.btn-default, .list-group-item {
+  border-width: 4px !important;
+  border-color: #b0dfe8;
+}
+
 .div-margin {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .div-margin-right {
   margin-right: 20px;
+}
+
+.div-margin-left {
+  margin-right: 10px;
 }
 
 .div-width {
@@ -58,7 +107,7 @@ body {
   background-color: #d7eff4 !important;
 }
 
-input, textarea, .btn-default, .list-group-item {
+input, textarea, .btn-default {
   background-color: #ebf7f9 !important;
 }
 
@@ -83,7 +132,6 @@ input, textarea, .btn-default, .list-group-item {
 }
 
 .social {
-  margin-left: 20px;
   margin-top: 10px;
   margin-bottom: 20px !important;
 }
