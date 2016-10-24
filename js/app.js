@@ -16,6 +16,7 @@ var app = angular.module('feed', [
   'LogController',
   'IpController',
   'MediaController',
+  'ChanthuController',
   'Filters'
 ]);
 
@@ -36,7 +37,7 @@ app.config(
             }).
             when('/chanthu', {
                 templateUrl: 'views/chanthu.html',
-                controller: 'MainCtrl'
+                controller: 'ChanthuCtrl'
             }).
             when('/yoeut', {
                 templateUrl: 'views/yoeut.html',
