@@ -16,7 +16,6 @@ var app = angular.module('feed', [
   'LogController',
   'IpController',
   'MediaController',
-  'updateMeta',
   'Filters'
 ]);
 
