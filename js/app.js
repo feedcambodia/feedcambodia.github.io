@@ -119,7 +119,7 @@ app.config(
                 controller: 'IpCtrl'
             }).
             otherwise({
-                redirectTo: '/'
+                redirectTo: '/notfound'
             });
 
           $locationProvider.html5Mode(true);
