@@ -8,6 +8,17 @@ body {
   background-color: #b0dfe8;
 }
 
+.h1 {
+  text-align: center;
+  font-family: arial;
+  font-size: 60px;
+
+}
+
+.div-banner {
+  margin-top: 200px;
+}
+
 .div-home {
   max-width: 200px;
   height: 185px;

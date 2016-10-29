@@ -118,6 +118,14 @@ app.config(
                 templateUrl: 'views/ip.html',
                 controller: 'IpCtrl'
             }).
+            when('/facebook', {
+                templateUrl: 'views/facebook.html',
+                controller: 'MainCtrl'
+            }).
+            when('/comment', {
+                templateUrl: 'views/comment.html',
+                controller: 'MainCtrl'
+            }).
             otherwise({
                 redirectTo: '/notfound'
             });
