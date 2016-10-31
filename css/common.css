@@ -8,6 +8,30 @@ body {
   background-color: #b0dfe8;
 }
 
+.donate {
+  margin-bottom: 24px;
+}
+
+.social {
+  margin-top: 7px;
+  margin-left: 10px;
+  margin-bottom: 10px !important;
+}
+
+.story {
+  min-height: 229px;
+}
+
+.side-pic {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 10px;
+}
+
+.home-soc-min-width {
+  min-width: 162px;
+}
+
 .h1 {
   text-align: center;
   font-family: arial;
@@ -30,7 +54,7 @@ body {
 }
 
 .martop1 {
-  margin-top: 7px;
+  padding-top: 14px !important;
 }
 
 .fb-follow {
@@ -63,7 +87,8 @@ body {
 }
 
 .btn-margin-top {
-  margin-top: 20px;
+  margin-top: 25px;
+  margin-bottom: 20px;
 }
 
 .learn {
@@ -142,9 +167,8 @@ input, textarea, .btn-default {
   font-size: 16px;
 }
 
-.social {
-  margin-top: 10px;
-  margin-bottom: 20px !important;
+.soc-float {
+  float: right;
 }
 
 .btn-pad {

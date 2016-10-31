@@ -30,12 +30,6 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://feedcambodia.com/chetra/</loc>
-    <lastmod>2016-10-13T07:08:11+00:00</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.80</priority>
-  </url>
-  <url>
     <loc>https://feedcambodia.com/contact/</loc>
     <lastmod>2016-10-13T07:08:11+00:00</lastmod>
     <changefreq>daily</changefreq>
@@ -78,7 +72,7 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://feedcambodia.com/yoeut/</loc>
+    <loc>https://feedcambodia.com/comment/</loc>
     <lastmod>2016-10-13T07:08:11+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>

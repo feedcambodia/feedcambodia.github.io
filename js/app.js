@@ -38,14 +38,6 @@ app.config(
                 templateUrl: 'views/chanthu.html',
                 controller: 'MainCtrl'
             }).
-            when('/yoeut', {
-                templateUrl: 'views/yoeut.html',
-                controller: 'MainCtrl'
-            }).
-            when('/chetra', {
-                templateUrl: 'views/chetra.html',
-                controller: 'MainCtrl'
-            }).
             when('/ouw', {
                 templateUrl: 'views/ouw.html',
                 controller: 'MainCtrl'
