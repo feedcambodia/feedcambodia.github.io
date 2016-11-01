@@ -66,7 +66,7 @@ app.config(
                 templateUrl: 'views/budget.html',
                 controller: 'MainCtrl'
             }).
-            when('/media/:src', {
+            when('/media?:src', {
                 templateUrl: 'views/media.html',
                 controller: 'MediaCtrl'
             }).

@@ -13,15 +13,19 @@ ctl.controller('MainCtrl', function ($scope, $routeParams, $location, $window, L
     'path': $location.$$path
   });
 
-  //$window.fbAsyncInit = function() {
-    if (FB) {
-      FB.init({
-        appId: '1752915584981927',
-        status: true,
-        cookie: true,
-        xfbml: true,
-        version: 'v2.8'
-      });
-    }
-  //};
+  //$window.parsePinBtns();
+
+  //if (IN) {
+    //IN.init();
+  //}
+
+  if (FB) {
+    FB.init({
+      appId: '1752915584981927',
+      status: true,
+      cookie: true,
+      xfbml: true,
+      version: 'v2.8'
+    });
+  }
 });

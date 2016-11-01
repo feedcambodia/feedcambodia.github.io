@@ -8,6 +8,31 @@ body {
   background-color: #b0dfe8;
 }
 
+.tumblr {
+  padding: 0px !important;
+  margin-top: 15px;
+  margin-bottom: 0px !important;
+}
+
+.share {
+  min-width: 500px;
+}
+
+.social1 {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.fb-follow {
+  margin-top: 15px;
+  margin-bottom: 10px;
+}
+
+.twitter-follow-button {
+  margin-top: 12px;
+  margin-bottom: 5px;
+}
+
 .donate {
   margin-bottom: 24px;
 }
@@ -55,10 +80,6 @@ body {
 
 .martop1 {
   padding-top: 14px !important;
-}
-
-.fb-follow {
-  margin-top: 5px;
 }
 
 .jumbotron {
