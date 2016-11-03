@@ -8,8 +8,8 @@ body {
   background-color: #b0dfe8;
 }
 
-.figure {
-    box-sizing: border-box;
+.size {
+  font-size: 16px;
 }
 
 .maxh {
