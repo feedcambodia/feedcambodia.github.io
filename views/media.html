@@ -8,13 +8,18 @@
 <meta name="description" content="View Photos and Videos." />
 
 <div class="container">
-  <div class="col-md-12">
-    <div class="row">
-      {{src}}
-      <img img img-responsive ng-src="{{src}}"/>
-      <a href="/media?https://lh3.googleusercontent.com/-69Mylf3RlmA/V_7tVYCq7RI/AAAAAAAAASs/9c_gnnpyIjUkzVp6lG9RoN5raGJdLocZACHM/s2048/FB_IMG_1475722124848.jpg">
-        <span class="btn btn-default">Go</span>
-      </a>
+  <div class="row">
+    <div class="col-md-12 psize div-pad text-center">
+      <div class="img-thumbnail div-margin1">
+        <a href="{{q.src}}">
+          <img class="img img-responsive maxh" ng-src="{{q.src}}" alt="{{q.alt}}"/>
+        </a>
+      </div>
+      <div class="div div-margin1">
+        <p>
+          {{q.alt}}
+        </p>
+      </div>
     </div>
   </div>
 </div>

@@ -13,6 +13,5 @@ ctl.controller('MediaCtrl', function ($scope, $sce, $routeParams, $location, Log
     'path': $location.$$path
   });
 
-  //$scope.src = $sce.trustAsResourceUrl($routeParams.src);
-  $scope.src = decodeURIComponent(location.search.replace('?', ''));
+  $scope.q = $location.search();
 });

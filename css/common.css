@@ -8,6 +8,14 @@ body {
   background-color: #b0dfe8;
 }
 
+.figure {
+    box-sizing: border-box;
+}
+
+.maxh {
+  max-height: 600px;
+}
+
 .tumblr {
   padding: 0px !important;
   margin-top: 15px;
@@ -15,7 +23,7 @@ body {
 }
 
 .share {
-  min-width: 500px;
+  width: 500px;
 }
 
 .social1 {
@@ -126,6 +134,11 @@ body {
 .btn-default, .list-group-item {
   border-width: 4px !important;
   border-color: #b0dfe8;
+}
+
+.div-margin1 {
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .div-margin {

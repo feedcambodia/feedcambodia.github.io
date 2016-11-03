@@ -23,11 +23,9 @@
         </p>
       </div>
     </div>
-  </div>
-  <div class="row">
     <div class="col-md-12">
       <span ng-repeat="item in photos.feed.entry" class="img-thumbnail thumb">
-        <a href="{{item.media$group.media$thumbnail[0].url | full}}">
+        <a href="/media?src={{item.media$group.media$thumbnail[0].url | full}}&amp;alt={{item.summary.$t}}">
           <img ng-src="{{item.media$group.media$thumbnail[0].url | thumb}}" alt="{{item.summary.$t}}" class="img-responsive"/>
         </a>
         <div class="caption">
