@@ -8,40 +8,23 @@
 <meta name="description" content="Ip" />
 
 <div class="container">
-  <div class="col-md-8 col-md-offset-2">
-    <div class="div div-margin">
-      <h3 class="martop inline-block">
-        Ip {{ip}}
-      </h3>
-      <a href="/log/{{ip}}"><span class="btn btn-default btn-margin">Log</span></a>
-      <a href="/ip" ng-show=ip><span class="btn btn-default btn-margin">Show All</span></a>
-      <span class="btn btn-default pull-right" ng-click="deleteAll()">Clear Ip</span>
+  <div class="row">
+    <div class="col-sm-12 div-pad">
+      <div class="div div-margin">
+        <a href="/log/{{ip}}"><span class="btn btn-default btn-margin">Log</span></a>
+        <a href="/ip" ng-show=ip><span class="btn btn-default btn-margin">Show All</span></a>
+        <span class="btn btn-default btn-margin" ng-click="deleteAll()">Clear Ip</span>
+      </div>
     </div>
-  </div>
-  <div class="col-md-8 col-md-offset-2">
-    <div class="div div-margin">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Date</th>
-            <th>IP</th>
-            <th>City</th>
-            <th>State Prov</th>
-            <th>Country</th>
-            <th>Delete</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr ng-repeat="item in log.list">
-            <td>{{item.date | date}}</td>
-            <td>{{item.ipAddress}}</td>
-            <td>{{item.city}}</td>
-            <td>{{item.stateProv}}</td>
-            <td>{{item.countryName}}</td>
-            <td><span class="btn glyphicon glyphicon-trash" ng-click="delete($index, item._id)"></span></td>
-          </tr>
-        </tbody>
-      </table>
+    <div class="col-sm-3 div-pad" ng-repeat="item in log.list">
+      <div class="div div-margin">
+        <div>{{item.date | date}}</div>
+        <div>{{item.ipAddress}}</div>
+        <div>{{item.city}}</div>
+        <div>{{item.stateProv}}</div>
+        <div>{{item.countryName}}</div>
+        <div><span class="btn glyphicon glyphicon-trash" ng-click="delete($index, item._id)"></span></div>
+      </div>
     </div>
   </div>
 </div>

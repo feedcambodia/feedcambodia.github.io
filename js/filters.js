@@ -37,3 +37,21 @@ fil.filter('date', function () {
         return new Date(input).toLocaleString();
     };
 });
+
+fil.filter('agent', function () {
+    return function (input) {
+      if (!input) {
+        return '';
+      } else if (input.indexOf('Chrome') > -1) {
+        return 'Chrome';
+      } else if (input.indexOf('Firefox') > -1) {
+        return 'Firefox';
+      } else if (input.indexOf('Safari') > -1) {
+        return 'Safari';
+      } else if (input.indexOf('MSIE') > -1) {
+        return 'MSIE';
+      } else {
+        return input;
+      }
+    };
+});
