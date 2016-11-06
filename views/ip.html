@@ -1,7 +1,7 @@
 <!--*****************************************************************************************************************
-     Copyright 2016 Feed. All rights reserved.
+     Copyright 2016 Chanthu Oeur. All rights reserved.
      You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
-     make available to the public any content or code on this website without prior written permission from Feed.
+     make available to the public any content or code on this website without prior written permission from Chanthu Oeur.
     *****************************************************************************************************************-->
 
 <title>Feed | Ip</title>
@@ -16,7 +16,7 @@
         <span class="btn btn-default btn-margin" ng-click="deleteAll()">Clear Ip</span>
       </div>
     </div>
-    <div class="col-sm-3 div-pad" ng-repeat="item in log.list">
+    <div class="col-sm-3 div-pad" ng-repeat="item in log.list | orderBy : '-date'">
       <div class="div div-margin">
         <div>{{item.date | date}}</div>
         <div>{{item.ipAddress}}</div>

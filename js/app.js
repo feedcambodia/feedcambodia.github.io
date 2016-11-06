@@ -1,7 +1,7 @@
 //*****************************************************************************************************************
-// Copyright 2016 Feed. All rights reserved.
+// Copyright 2016 Chanthu Oeur. All rights reserved.
 // You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
-// make available to the public any content or code on this website without prior written permission from Feed.
+// make available to the public any content or code on this website without prior written permission from Chanthu Oeur.
 //*****************************************************************************************************************
 
 'use strict';
@@ -52,6 +52,10 @@ app.config(
             }).
             when('/player/:playlistId', {
                 templateUrl: 'views/player.html',
+                controller: 'PlayerCtrl'
+            }).
+            when('/player0', {
+                templateUrl: 'views/player0.html',
                 controller: 'PlayerCtrl'
             }).
             when('/social', {
