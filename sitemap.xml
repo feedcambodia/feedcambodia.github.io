@@ -7,61 +7,73 @@
 
   <url>
     <loc>https://feedcambodia.com/</loc>
-    <lastmod>2016-10-13T07:13:14+00:00</lastmod>
+    <lastmod>2016-11-07T07:13:14+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://feedcambodia.com/about/</loc>
-    <lastmod>2016-10-13T07:08:11+00:00</lastmod>
+    <lastmod>2016-11-07T07:08:11+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://feedcambodia.com/chanthu/</loc>
-    <lastmod>2016-10-13T07:08:11+00:00</lastmod>
+    <lastmod>2016-11-07T07:08:11+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://feedcambodia.com/contact/</loc>
-    <lastmod>2016-10-13T07:08:11+00:00</lastmod>
+    <lastmod>2016-11-07T07:08:11+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://feedcambodia.com/ouw/</loc>
-    <lastmod>2016-10-13T07:08:11+00:00</lastmod>
+    <lastmod>2016-11-07T07:08:11+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://feedcambodia.com/photo/</loc>
-    <lastmod>2016-10-13T07:08:11+00:00</lastmod>
+    <lastmod>2016-11-07T07:08:11+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://feedcambodia.com/player/</loc>
-    <lastmod>2016-10-13T07:08:11+00:00</lastmod>
+    <lastmod>2016-11-07T07:08:11+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://feedcambodia.com/social/</loc>
-    <lastmod>2016-10-13T07:08:11+00:00</lastmod>
+    <lastmod>2016-11-07T07:08:11+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://feedcambodia.com/video/</loc>
-    <lastmod>2016-10-13T07:08:11+00:00</lastmod>
+    <lastmod>2016-11-07T07:08:11+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
   <url>
     <loc>https://feedcambodia.com/comment/</loc>
-    <lastmod>2016-10-13T07:08:11+00:00</lastmod>
+    <lastmod>2016-11-07T07:08:11+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://feedcambodia.com/privacy/</loc>
+    <lastmod>2016-11-07T07:08:11+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://feedcambodia.com/terms/</loc>
+    <lastmod>2016-11-07T07:08:11+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.80</priority>
   </url>
