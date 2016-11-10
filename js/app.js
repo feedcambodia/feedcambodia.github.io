@@ -16,6 +16,7 @@ var app = angular.module('feed', [
   'LogController',
   'IpController',
   'MediaController',
+  'WikiController',
   'Filters'
 ]);
 
@@ -121,6 +122,22 @@ app.config(
             when('/comment', {
                 templateUrl: 'views/comment.html',
                 controller: 'MainCtrl'
+            }).
+            when('/wiki/image/:title', {
+                templateUrl: 'views/wiki-image.html',
+                controller: 'WikiImageCtrl'
+            }).
+            when('/wiki/link', {
+                templateUrl: 'views/wiki-link.html',
+                controller: 'WikiLinkCtrl'
+            }).
+            when('/wiki/commons/:title', {
+                templateUrl: 'views/wiki.html',
+                controller: 'WikiCommonsCtrl'
+            }).
+            when('/wiki/:title', {
+                templateUrl: 'views/wiki.html',
+                controller: 'WikiCtrl'
             }).
             otherwise({
                 redirectTo: '/notfound'

@@ -74,3 +74,31 @@ res.factory('PlaylistResource', function ($resource) {
     });
   }
 });
+
+res.factory('WikiResource', function ($resource) {
+  var host = location.hostname;
+  if (host == 'feedcambodia.com') {
+    host = 'lahuna.com';
+  }
+  var resource = 'https://en.wikipedia.org/w/api.php';
+  return $resource('https://' + host + ':8000/other', {}, {
+    Get: {
+      method: 'GET',
+      params: { 'resource': resource }
+    }
+  });
+});
+
+res.factory('WikiCommonsResource', function ($resource) {
+  var host = location.hostname;
+  if (host == 'feedcambodia.com') {
+    host = 'lahuna.com';
+  }
+  var resource = 'https://commons.wikimedia.org/w/api.php';
+  return $resource('https://' + host + ':8000/other', {}, {
+    Get: {
+      method: 'GET',
+      params: { 'resource': resource }
+    }
+  });
+});

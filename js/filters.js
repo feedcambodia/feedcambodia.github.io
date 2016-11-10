@@ -32,6 +32,15 @@ fil.filter('full', function () {
     };
 });
 
+fil.filter('wiki', function () {
+    return function (input) {
+        if (input.indexOf('250px') > -1)
+            return input.replace('250px', '1000px');
+        else
+            return input;
+    };
+});
+
 fil.filter('date', function () {
     return function (input) {
         return new Date(input).toLocaleString();
@@ -53,5 +62,32 @@ fil.filter('agent', function () {
       } else {
         return input;
       }
+    };
+});
+
+fil.filter('file', function () {
+    return function (input) {
+      if (!input) {
+        return '';
+      }
+
+      input = input.replace('File:', '');
+      input = input.replace('.svg', '');
+      input = input.replace('.jpg', '');
+      input = input.replace('.JPG', '');
+      input = input.replace('.png', '');
+
+      return input;
+    };
+});
+
+fil.filter('local', function () {
+    return function (input) {
+      if (!input) {
+        return '';
+      }
+
+      input = input.replace('https://en.wikipedia.org/wiki/', '');
+      return '/wiki/' + input;
     };
 });
