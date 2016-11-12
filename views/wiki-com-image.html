@@ -1,0 +1,28 @@
+<!--*****************************************************************************************************************
+     Copyright 2016 Chanthu Oeur. All rights reserved.
+     You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
+     make available to the public any content or code on this website without prior written permission from Chanthu Oeur.
+    *****************************************************************************************************************-->
+
+<title>Wiki Image</title>
+<meta name="description" content="View Wiki Image." />
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 div-pad text-center">
+      <div class="img-thumbnail div-margin1">
+        <a href="{{item.url}}">
+          <img class="img img-responsive maxh" ng-src="{{item.thumburl}}" alt="{{item.title}}"/>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-12 div-pad">
+      <div class="div div-margin">
+        <div><strong>Title: </strong>{{item.title}}</div>
+        <div><strong>Description: </strong><span class="inline-block" ng-bind-html="item.desc"></span></div>
+        <div><strong>Artist: </strong><span ng-bind-html="item.artist"></span></div>
+        <div><strong>License: </strong><span><a href="{{item.licurl}}">{{item.use}} ({{item.lic}})</a></span></div>
+      </div>
+    </div>
+  </div>
+</div>

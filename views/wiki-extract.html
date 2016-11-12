@@ -1,0 +1,24 @@
+<!--*****************************************************************************************************************
+     Copyright 2016 Chanthu Oeur. All rights reserved.
+     You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
+     make available to the public any content or code on this website without prior written permission from Chanthu Oeur.
+    *****************************************************************************************************************-->
+
+<title>Wiki</title>
+<meta name="description" content="Wiki" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 div-pad text-center" ng-show="msg">
+      <div class="div-small div-margin">
+        <h4 class="inline-block">{{msg}}</h4>
+        <a href="/wiki/image/{{title}}" ng-show="info"><span class="btn btn-default btn-margin">Photos</span></a>
+      </div>
+    </div>
+    <div class="col-md-12 psize div-pad" ng-show="info">
+      <div class="div div-margin">
+        <div ng-bind-html="info"></div>
+      </div>
+    </div>
+  </div>
+</div>
