@@ -102,3 +102,11 @@ res.factory('WikiCommonsResource', function ($resource) {
     }
   });
 });
+
+res.factory('WikiExcludeResource', function ($resource) {
+  return $resource('/data/wiki_image_exclude.json', {}, {
+    Get: {
+      method: 'GET'
+    }
+  });
+});

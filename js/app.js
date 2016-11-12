@@ -127,17 +127,29 @@ app.config(
                 templateUrl: 'views/wiki-image.html',
                 controller: 'WikiImageCtrl'
             }).
-            when('/wiki/link', {
+            when('/wiki/link/:title', {
                 templateUrl: 'views/wiki-link.html',
                 controller: 'WikiLinkCtrl'
             }).
+            when('/wiki/commons/image/:title', {
+                templateUrl: 'views/wiki-com-image.html',
+                controller: 'WikiComImageCtrl'
+            }).
             when('/wiki/commons/:title', {
-                templateUrl: 'views/wiki.html',
+                templateUrl: 'views/wiki-extract.html',
                 controller: 'WikiCommonsCtrl'
             }).
-            when('/wiki/:title', {
+            when('/wiki/search', {
+                templateUrl: 'views/wiki-search.html',
+                controller: 'WikiSearchCtrl'
+            }).
+            when('/wiki/extract/:title', {
+                templateUrl: 'views/wiki-extract.html',
+                controller: 'WikiExtractCtrl'
+            }).
+            when('/wiki', {
                 templateUrl: 'views/wiki.html',
-                controller: 'WikiCtrl'
+                controller: 'MainCtrl'
             }).
             otherwise({
                 redirectTo: '/notfound'

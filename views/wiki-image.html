@@ -9,14 +9,20 @@
 
 <div class="container">
   <div class="row">
+    <div class="col-md-12 div-pad text-center" ng-show="msg">
+      <div class="div-small div-margin">
+        <h4 class="inline-block">{{msg}}</h4>
+        <a href="/wiki/extract/{{title}}" ng-show="info"><span class="btn btn-default btn-margin">Extract</span></a>
+      </div>
+    </div>
     <div class="col-md-12">
       <span ng-repeat="item in info" class="img-thumbnail thumb">
-        <a href="/media?src={{item.imageinfo[0].url}}&amp;alt={{item.title}}">
-          <img ng-src="{{item.imageinfo[0].thumburl}}" class="img-responsive"/>
+        <a href="/wiki/commons/image/{{item.title}}">
+          <img ng-src="{{item.thumburl}}" class="img-responsive"/>
         </a>
-        <div class="caption">
-          <!--<div ng-bind-html="goSce(item.imageinfo[0].extmetadata.ImageDescription.value)"></div>-->
+        <div class="caption wrap">
           {{item.title}}
+          <div><span class="btn glyphicon glyphicon-trash" ng-click="hide($index)"></span></div>
         </div>
       </span>
     </div>
