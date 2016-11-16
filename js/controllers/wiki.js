@@ -47,6 +47,106 @@ ctl.controller('WikiSearchCtrl', function ($sce, $scope, $routeParams, $location
   }
 });
 
+ctl.controller('WikiCommonsSearchCtrl', function ($sce, $scope, $routeParams, $location,
+  LogResource, WikiResource) {
+  LogResource.Post({
+    'path': $location.$$path
+  });
+
+  var sval = localStorage.getItem('wiki_search');
+  if (sval && sval.length > 0) {
+    $scope.search = sval;
+  } else {
+    $scope.search = 'Cambodia';
+  }
+
+  search();
+
+  function search() {
+    localStorage.setItem('wiki_search', $scope.search);
+    WikiResource.Get({
+      srsearch: $scope.search,
+      action: 'query',
+      list: 'search',
+      srlimit: 100,
+      format: 'json',
+      srnamespace: 6
+    }).$promise.then(function (data) {
+      $scope.info = data.query.search;
+    });
+  }
+
+  function getPageId(pages) {
+    for (var pageId in pages) {
+      return pageId;
+    }
+  }
+
+  $scope.goSearch = function ($event) {
+    var keypressed = $event.keyCode || $event.which;
+    if (keypressed == 13) {
+      search();
+    }
+  }
+
+  $scope.clickSearch = function () {
+    search();
+  }
+});
+
+ctl.controller('WikiPageCtrl', function ($sce, $scope, $routeParams, $location,
+  LogResource, WikiResource) {
+  LogResource.Post({
+    'path': $location.$$path
+  });
+
+  $scope.title = $routeParams.title;
+
+  WikiResource.Get({
+    page: $routeParams.title,
+    action: 'parse',
+    prop: 'text|headhtml',
+    format: 'json'
+  }).$promise.then(function (data) {
+    var page = data.parse.text['*'];
+    if (!page) {
+      $scope.msg = 'No page found for: ' + $routeParams.title;
+      return;
+    }
+    $scope.msg = 'Page for: ' + $routeParams.title;
+    $scope.info = $sce.trustAsHtml(page);
+  });
+});
+
+ctl.controller('WikiSectionCtrl', function ($sce, $scope, $routeParams, $location,
+  LogResource, WikiResource) {
+  LogResource.Post({
+    'path': $location.$$path
+  });
+
+  $scope.title = $routeParams.title;
+
+  WikiResource.Get({
+    page: $routeParams.title,
+    action: 'parse',
+    prop: 'sections',
+    format: 'json'
+  }).$promise.then(function (data) {
+    if (data.error) {
+      $scope.msg = data.error.info + ': ' + $routeParams.title;
+      return;
+    }
+    $scope.msg = 'Sections for: ' + $routeParams.title;
+    var sec = data.parse.sections;
+    var main = {
+      index: 0,
+      line: 'Main'
+    }
+    sec.unshift(main);
+    $scope.info = sec;
+  });
+});
+
 ctl.controller('WikiExtractCtrl', function ($sce, $scope, $routeParams, $location,
   LogResource, WikiResource) {
   LogResource.Post({
@@ -79,21 +179,24 @@ ctl.controller('WikiExtractCtrl', function ($sce, $scope, $routeParams, $locatio
 });
 
 ctl.controller('WikiCommonsCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiCommonsResource) {
+  LogResource, WikiResource) {
   LogResource.Post({
     'path': $location.$$path
   });
 
   $scope.title = $routeParams.title;
 
-  WikiCommonsResource.Get({
+  WikiResource.Get({
     titles: $routeParams.title,
     action: 'query',
-    prop: 'extracts',
+    prop: 'revisions',
+    rvprop: 'content',
+    rvparse: '',
+    rvsection: $routeParams.section,
     format: 'json'
   }).$promise.then(function (data) {
     var pageId = getPageId(data.query.pages);
-    var extract = data.query.pages[pageId].extract;
+    var extract = data.query.pages[pageId].revisions[0]['*'];
     if (!extract) {
       $scope.msg = 'No extract found for: ' + $routeParams.title;
       return;
@@ -133,12 +236,17 @@ ctl.controller('WikiLinkCtrl', function ($sce, $scope, $routeParams, $location,
 });
 
 ctl.controller('WikiComImageCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiCommonsResource) {
+  LogResource, WikiResource) {
   LogResource.Post({
     'path': $location.$$path
   });
 
-  getImage($routeParams.title, function(title, imginfo) {
+  var t = $routeParams.title;
+  if (t.indexOf('File:') == -1) {
+    t = 'File:' + t;
+  }
+
+  getImage(t, function(title, imginfo) {
     $scope.item = {
       title: title
     }
@@ -168,6 +276,8 @@ ctl.controller('WikiComImageCtrl', function ($sce, $scope, $routeParams, $locati
         }
         if (licurl) {
           $scope.item.licurl = trust(licurl.value);
+        } else {
+          $scope.item.licurl = '#';
         }
       }
     }
@@ -188,7 +298,7 @@ ctl.controller('WikiComImageCtrl', function ($sce, $scope, $routeParams, $locati
   }
 
   function getImage(title, callback) {
-    WikiCommonsResource.Get({
+    WikiResource.Get({
       titles: title,
       action: 'query',
       prop: 'imageinfo',
@@ -220,7 +330,7 @@ ctl.controller('WikiComImageCtrl', function ($sce, $scope, $routeParams, $locati
 });
 
 ctl.controller('WikiImageCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiResource, WikiCommonsResource, WikiExcludeResource) {
+  LogResource, WikiResource, WikiExcludeResource) {
   LogResource.Post({
     'path': $location.$$path
   });
@@ -307,7 +417,7 @@ ctl.controller('WikiImageCtrl', function ($sce, $scope, $routeParams, $location,
   }
 
   function getImage(title, callback) {
-    WikiCommonsResource.Get({
+    WikiResource.Get({
       titles: title,
       action: 'query',
       prop: 'imageinfo',

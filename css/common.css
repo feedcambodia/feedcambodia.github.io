@@ -8,6 +8,33 @@ body {
   background-color: #b0dfe8;
 }
 
+table {
+  background-color: #d7eff4 !important;
+}
+
+.navbox-list {
+  border-left-style: none !important;
+}
+
+.nowraplinks {
+  font-size: 14px !important;
+}
+
+.navbox-title, .navbox-group, .navbox-abovebelow, .noprint {
+  background-color: #d7eff4 !important;
+  background: #d7eff4 !important;
+}
+
+.toc {
+  font-size: 0px;
+  visibility: hidden;
+}
+
+.toc, .toc h2, .mw-editsection, .plainlinks {
+  font-size: 0px !important;
+  visibility: hidden;
+}
+
 .wrap {
   word-wrap: break-word;
 }

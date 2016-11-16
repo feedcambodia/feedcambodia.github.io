@@ -135,7 +135,11 @@ app.config(
                 templateUrl: 'views/wiki-com-image.html',
                 controller: 'WikiComImageCtrl'
             }).
-            when('/wiki/commons/:title', {
+            when('/wiki/commons/search', {
+                templateUrl: 'views/wiki-com-search.html',
+                controller: 'WikiCommonsSearchCtrl'
+            }).
+            when('/wiki/commons/:title/:section', {
                 templateUrl: 'views/wiki-extract.html',
                 controller: 'WikiCommonsCtrl'
             }).
@@ -146,6 +150,20 @@ app.config(
             when('/wiki/extract/:title', {
                 templateUrl: 'views/wiki-extract.html',
                 controller: 'WikiExtractCtrl'
+            }).
+            when('/wiki/page/:title', {
+                templateUrl: 'views/wiki-extract.html',
+                controller: 'WikiPageCtrl'
+            }).
+            when('/wiki/section/:title', {
+                templateUrl: 'views/wiki-section.html',
+                controller: 'WikiSectionCtrl'
+            }).
+            when('/wiki/File::title', {
+                redirectTo: '/wiki/commons/image/:title'
+            }).
+            when('/wiki/:title', {
+                redirectTo: '/wiki/page/:title'
             }).
             when('/wiki', {
                 templateUrl: 'views/wiki.html',
