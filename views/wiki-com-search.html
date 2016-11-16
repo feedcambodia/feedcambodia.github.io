@@ -1,0 +1,36 @@
+<!--*****************************************************************************************************************
+     Copyright 2016 Chanthu Oeur. All rights reserved.
+     You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
+     make available to the public any content or code on this website without prior written permission from Chanthu Oeur.
+    *****************************************************************************************************************-->
+
+<title>Wiki Commons Search</title>
+<meta name="description" content="Wiki Search" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 div-pad">
+      <div class="div div-margin">
+        <h4 class="mar">Wiki Commons Search</h4>
+      </div>
+    </div>
+    <div class="col-md-8 div-pad">
+      <div class="div div-margin martop1">
+        <div class="input-group">
+          <input ng-model="search" ng-keydown="goSearch($event)"
+             type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" ng-click="clickSearch()"><span class="glyphicon glyphicon-search"></span></button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-3 div-pad" ng-repeat="item in info">
+      <div class="div div-margin">
+        <div><a href="/wiki/commons/image/{{item.title}}" class="wrap">{{item.title}}</a></div>
+        <!--<div ng-bind-html="item.snippet"></div>-->
+        <div><span class="btn glyphicon glyphicon-remove" ng-click="delete($index)"></span></div>
+      </div>
+    </div>
+  </div>
+</div>
