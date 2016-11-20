@@ -131,6 +131,13 @@ app.config(
                 templateUrl: 'views/wiki-link.html',
                 controller: 'WikiLinkCtrl'
             }).
+            /*when('/wiki/commons/User::username', {
+              redirectTo: '/wiki/user/:username'
+            }).
+            when('/wiki/user/:username', {
+              templateUrl: 'views/wiki-extract.html',
+              controller: 'WikiCommonsCtrl'
+            }).*/
             when('/wiki/commons/image/:title', {
                 templateUrl: 'views/wiki-com-image.html',
                 controller: 'WikiComImageCtrl'
@@ -159,12 +166,12 @@ app.config(
                 templateUrl: 'views/wiki-section.html',
                 controller: 'WikiSectionCtrl'
             }).
-            when('/wiki/File::title', {
-                redirectTo: '/wiki/commons/image/:title'
+            /*when('/wiki/File::title', {
+                redirectTo: '/wiki/commons/image/File::title'
             }).
             when('/wiki/:title', {
                 redirectTo: '/wiki/page/:title'
-            }).
+            }).*/
             when('/wiki', {
                 templateUrl: 'views/wiki.html',
                 controller: 'MainCtrl'

@@ -184,24 +184,36 @@ ctl.controller('WikiCommonsCtrl', function ($sce, $scope, $routeParams, $locatio
     'path': $location.$$path
   });
 
-  $scope.title = $routeParams.title;
+  var title;
+  var username = $routeParams.username
+  if (username) {
+    title = 'User:' + username;
+  } else {
+    title = $routeParams.title;
+  }
+  $scope.title = title;
+
+  var section = $routeParams.section;
+  if (!section) {
+    section = 0;
+  }
 
   WikiResource.Get({
-    titles: $routeParams.title,
+    titles: title,
     action: 'query',
     prop: 'revisions',
     rvprop: 'content',
     rvparse: '',
-    rvsection: $routeParams.section,
+    rvsection: section,
     format: 'json'
   }).$promise.then(function (data) {
     var pageId = getPageId(data.query.pages);
     var extract = data.query.pages[pageId].revisions[0]['*'];
     if (!extract) {
-      $scope.msg = 'No extract found for: ' + $routeParams.title;
+      $scope.msg = 'No extract found for: ' + title;
       return;
     }
-    $scope.msg = 'Extract for: ' + $routeParams.title;
+    $scope.msg = 'Extract for: ' + title;
     $scope.info = $sce.trustAsHtml(extract);
   });
 
@@ -277,7 +289,11 @@ ctl.controller('WikiComImageCtrl', function ($sce, $scope, $routeParams, $locati
         if (licurl) {
           $scope.item.licurl = trust(licurl.value);
         } else {
-          $scope.item.licurl = '#';
+          if (lic = 'Public domain') {
+            $scope.item.licurl = '/wiki/extract/Wikipedia:Public_domain';
+          } else {
+            $scope.item.licurl = '';
+          }
         }
       }
     }
@@ -286,14 +302,15 @@ ctl.controller('WikiComImageCtrl', function ($sce, $scope, $routeParams, $locati
   function trust(html) {
     if (!html) {
       return;
-    }https://localhost:4000/wiki/commons?title=User:Rdghalayini&action=edit&redlink=1
+    }
 
-    html = html.replace('https://en.wikipedia.org', '')
-    .replace('https://commons.wikimedia.org/wiki/', '/wiki/commons/')
-    .replace('//commons.wikimedia.org/wiki/', '/wiki/commons/')
-    .replace('//commons.wikimedia.org/w/index.php', '/wiki/commons')
-    .replace('&amp;action=edit&amp;redlink=1', '')
-    .replace('?title=', '/')
+    html = html.replace(/https:\/\/en.wikipedia.org\/wiki\//g, '/wiki/extract/')
+    .replace(/https:\/\/en.wikipedia.org\//g, '')
+    .replace(/https:\/\/commons.wikimedia.org\/wiki\//g, '/wiki/extract/')
+    .replace(/\/\/commons.wikimedia.org\/wiki\//g, '/wiki/extract/')
+    .replace(/\/\/commons.wikimedia.org\/w\/index.php/g, '/wiki/extract')
+    .replace(/&amp;action=edit&amp;redlink=1/g, '')
+    .replace(/\?title=/g, '/');
     return $sce.trustAsHtml(html);
   }
 
