@@ -13,7 +13,7 @@ ctl.controller('PhotoCtrl', function ($scope, $routeParams, $location, PicasaAlb
     'path': $location.$$path
   });
 
-  $scope.photos = PicasaAlbumFeedResource('6340765808908508833').Get({
+  $scope.photos = PicasaAlbumFeedResource.Get({
     'kind': 'photo',
     'start-index': 1,
     'max-results': 50

@@ -14,10 +14,16 @@ ctl.controller('WikiSearchCtrl', function ($sce, $scope, $routeParams, $location
     'path': $location.$$path
   });
 
-  $scope.search = 'Cambodia';
+  var sval = localStorage.getItem('wiki_search');
+  if (sval && sval.length > 0) {
+    $scope.search = sval;
+  } else {
+    $scope.search = 'Cambodia';
+  }
   search();
 
   function search() {
+    localStorage.setItem('wiki_search', $scope.search);
     WikiResource.Get({
       srsearch: $scope.search,
       action: 'query',
@@ -53,17 +59,16 @@ ctl.controller('WikiCommonsSearchCtrl', function ($sce, $scope, $routeParams, $l
     'path': $location.$$path
   });
 
-  var sval = localStorage.getItem('wiki_search');
+  var sval = localStorage.getItem('wiki_photo_search');
   if (sval && sval.length > 0) {
     $scope.search = sval;
   } else {
     $scope.search = 'Cambodia';
   }
-
   search();
 
   function search() {
-    localStorage.setItem('wiki_search', $scope.search);
+    localStorage.setItem('wiki_photo_search', $scope.search);
     WikiResource.Get({
       srsearch: $scope.search,
       action: 'query',
@@ -72,7 +77,12 @@ ctl.controller('WikiCommonsSearchCtrl', function ($sce, $scope, $routeParams, $l
       format: 'json',
       srnamespace: 6
     }).$promise.then(function (data) {
-      $scope.info = data.query.search;
+      if (data && data.query && data.query.search) {
+        $scope.info = data.query.search;
+      } else {
+        $scope.info = null;
+        window.alert('No results found. Try entering diiferent search criteria.');
+      }
     });
   }
 
@@ -311,6 +321,7 @@ ctl.controller('WikiComImageCtrl', function ($sce, $scope, $routeParams, $locati
     .replace(/\/\/commons.wikimedia.org\/w\/index.php/g, '/wiki/extract')
     .replace(/&amp;action=edit&amp;redlink=1/g, '')
     .replace(/\?title=/g, '/');
+
     return $sce.trustAsHtml(html);
   }
 

@@ -13,7 +13,7 @@ ctl.controller('VideoCtrl', function ($scope, $routeParams, $location, PlaylistR
     'path': $location.$$path
   });
 
-  $scope.videos = PlaylistResource().Get({
+  $scope.videos = PlaylistResource.Get({
     'part': 'snippet',
     'channelId': 'UCO3EB-nz80N1VHyYaG81G3A',
     'maxResults': 50

@@ -17,12 +17,21 @@ var app = angular.module('feed', [
   'IpController',
   'MediaController',
   'WikiController',
+  'FlickrController',
   'Filters'
 ]);
 
 app.config(
     function ($routeProvider, $locationProvider) {
         $routeProvider.
+            when('/flickr', {
+                templateUrl: 'views/flickr-search.html',
+                controller: 'FlickrSearchCtrl'
+            }).
+            when('/flickr/:id', {
+                templateUrl: 'views/flickr-image.html',
+                controller: 'FlickrImageCtrl'
+            }).
             when('/', {
                 templateUrl: 'views/home.html',
                 controller: 'MainCtrl'
