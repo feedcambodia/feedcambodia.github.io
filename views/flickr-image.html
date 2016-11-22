@@ -1,0 +1,30 @@
+<!--*****************************************************************************************************************
+     Copyright 2016 Chanthu Oeur. All rights reserved.
+     You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
+     make available to the public any content or code on this website without prior written permission from Chanthu Oeur.
+    *****************************************************************************************************************-->
+
+<title>Flickr Image</title>
+<meta name="description" content="Flickr Image." />
+
+<div class="container">
+  <div class="row" ng-show="item">
+    <div class="col-md-12 div-pad text-center">
+      <div class="img-thumbnail div-margin1">
+        <a href="{{url}}">
+          <img class="img img-responsive maxh" ng-src="{{url}}" alt="{{item.title._content}}"/>
+        </a>
+      </div>
+    </div>
+    <div class="col-md-12 div-pad">
+      <div class="div div-margin">
+        <div><strong>Title: </strong>{{item.title._content}}</div>
+        <div><strong>Description: </strong><span class="inline" ng-bind-html="desc"></span></div>
+        <div><strong>Artist: </strong><a href="{{item.urls.url[0]._content}}">{{item.owner.realname}} ({{item.owner.username}})</a></div>
+        <div><strong>License: </strong><a href="{{lic.url}}">{{lic.name}}</a></div>
+        <div><strong>Views: </strong>{{item.views | number}}</div>
+        <a href="/flickr"><span class="btn btn-default minimarg">Find More Photos</span></a>
+      </div>
+    </div>
+  </div>
+</div>

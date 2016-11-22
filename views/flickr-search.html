@@ -1,0 +1,36 @@
+<!--*****************************************************************************************************************
+     Copyright 2016 Chanthu Oeur. All rights reserved.
+     You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
+     make available to the public any content or code on this website without prior written permission from Chanthu Oeur.
+    *****************************************************************************************************************-->
+
+<title>Flickr Search</title>
+<meta name="description" content="Flickr Search" />
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 div-pad">
+      <div class="div div-margin">
+        <h4 class="mar">Flickr Search</h4>
+      </div>
+    </div>
+    <div class="col-md-8 div-pad">
+      <div class="div div-margin martop1">
+        <div class="input-group">
+          <input ng-model="search" ng-keydown="goSearch($event)"
+             type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" ng-click="clickSearch()"><span class="glyphicon glyphicon-search"></span></button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <span ng-repeat="item in info" class="img-thumbnail thumb">
+        <a href="/flickr/{{item.id}}" title="{{item.title}}">
+          <img ng-src="{{item.url_q}}" class="img-responsive"/>
+        </a>
+      </span>
+    </div>
+  </div>
+</div>
