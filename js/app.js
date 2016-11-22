@@ -28,6 +28,10 @@ app.config(
                 templateUrl: 'views/flickr-search.html',
                 controller: 'FlickrSearchCtrl'
             }).
+            when('/flickr/user/:userid', {
+                templateUrl: 'views/flickr-search.html',
+                controller: 'FlickrSearchCtrl'
+            }).
             when('/flickr/:id', {
                 templateUrl: 'views/flickr-image.html',
                 controller: 'FlickrImageCtrl'

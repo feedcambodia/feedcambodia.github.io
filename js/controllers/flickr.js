@@ -14,11 +14,16 @@ ctl.controller('FlickrSearchCtrl', function ($scope, $routeParams, $location,
     'path': $location.$$path
   });
 
+  var userid = $routeParams.userid;
   var sval = localStorage.getItem('flickr_search');
   if (sval && sval.length > 0) {
     $scope.search = sval;
   } else {
-    $scope.search = 'Cambodia';
+    if (!userid) {
+      $scope.search = 'Cambodia';
+    } else {
+      $scope.search = '';
+    }
   }
   search();
 
@@ -29,7 +34,8 @@ ctl.controller('FlickrSearchCtrl', function ($scope, $routeParams, $location,
       'method': 'flickr.photos.search',
       'extras': 'url_q',
       'sort': 'interestingness-desc',
-      'license': '1, 2, 3, 4, 5, 6, 7, 8, 9, 10'
+      'license': '1, 2, 3, 4, 5, 6, 7, 8, 9, 10',
+      'user_id': userid
     }).$promise.then(function (data) {
       $scope.info = data.photos.photo;
     });
@@ -64,7 +70,7 @@ ctl.controller('FlickrImageCtrl', function ($scope, $routeParams, $location, $sc
     var i = data.photo;
     $scope.item = i;
     $scope.desc = $sce.trustAsHtml(i.description._content);
-    $scope.url = 'https://farm' + i.farm + '.staticflickr.com/' + i.server + '/' + i.id + '_' + i.secret + '_b.jpg';
+    getUrl(i.id);
     FlickrLicenseResource.Get()
     .$promise.then(function (result) {
       var lics = result.license;
@@ -76,5 +82,15 @@ ctl.controller('FlickrImageCtrl', function ($scope, $routeParams, $location, $sc
       }
     });
   });
+
+  function getUrl(id) {
+    FlickrResource.Get({
+      'photo_id': id,
+      'method': 'flickr.photos.getSizes'
+    }).$promise.then(function (data) {
+      var a = data.sizes.size;
+      $scope.url = a[a.length-1].source;
+    });
+  }
 
 });
