@@ -4,15 +4,15 @@
      make available to the public any content or code on this website without prior written permission from Chanthu Oeur.
     *****************************************************************************************************************-->
 
-<title>Flickr Image</title>
-<meta name="description" content="Flickr Image." />
+<title>{{item.title._content}}</title>
+<meta name="description" content="{{item.title._content}}." />
 
 <div class="container">
   <div class="row" ng-show="item">
     <div class="col-md-12 div-pad text-center">
       <div class="img-thumbnail div-margin1">
-        <a href="{{url}}">
-          <img class="img img-responsive maxh" ng-src="{{url}}" alt="{{item.title._content}}"/>
+        <a href="{{url_o}}">
+          <img class="img img-responsive maxh" ng-src="{{url_b}}" alt="{{item.title._content}}"/>
         </a>
       </div>
     </div>
@@ -23,8 +23,8 @@
         <div><strong>Artist: </strong><a href="{{item.urls.url[0]._content}}">{{item.owner.realname}} ({{item.owner.username}})</a></div>
         <div><strong>License: </strong><a href="{{lic.url}}">{{lic.name}}</a></div>
         <div><strong>Views: </strong>{{item.views | number}}</div>
-        <a href="/flickr"><span class="btn btn-default minimarg">Search Photos</span></a>
-        <a href="/flickr/user/{{item.owner.nsid}}"><span class="btn btn-default minimarg">More From {{item.owner.username}}</span></a>
+        <a href="/flickr"><span class="btn btn-default pop minimarg">Search Photos</span></a>
+        <a href="/flickr/user/{{item.owner.nsid}}"><span class="btn btn-default pop minimarg">More From {{item.owner.username}}</span></a>
       </div>
     </div>
   </div>

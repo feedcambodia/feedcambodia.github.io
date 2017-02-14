@@ -9,32 +9,49 @@
 var ctl = angular.module('FlickrController', ['Resources']);
 
 ctl.controller('FlickrSearchCtrl', function ($scope, $routeParams, $location,
-  LogResource, FlickrResource) {
+  LogResource, FlickrResource, FlickrLicenseResource) {
   LogResource.Post({
     'path': $location.$$path
   });
 
-  var userid = $routeParams.userid;
-  var sval = localStorage.getItem('flickr_search');
-  if (sval && sval.length > 0) {
-    $scope.search = sval;
-  } else {
-    if (!userid) {
-      $scope.search = 'Cambodia';
+  FlickrLicenseResource.Get()
+  .$promise.then(function (result) {
+    $scope.licList = result.license;
+    var userid = $routeParams.userid;
+    var sval = localStorage.getItem('flickr_search');
+    if (sval) {
+      $scope.search = sval;
     } else {
-      $scope.search = '';
+      if (!userid) {
+        $scope.search = 'Cambodia';
+      } else {
+        $scope.search = '';
+      }
     }
-  }
-  search();
 
-  function search() {
+    var lic = localStorage.getItem('flickr_license');
+    if (lic) {
+      $scope.license = lic;
+    } else {
+      if (!userid) {
+        $scope.license = 5;
+      } else {
+        $scope.license = '';
+      }
+    }
+
+    search(userid);
+  });
+
+  function search(userid) {
     localStorage.setItem('flickr_search', $scope.search);
+    localStorage.setItem('flickr_license', $scope.license);
     FlickrResource.Get({
       'text': $scope.search,
       'method': 'flickr.photos.search',
-      'extras': 'url_q',
+      'extras': 'url_q, license',
       'sort': 'interestingness-desc',
-      'license': '1, 2, 3, 4, 5, 6, 7, 8, 9, 10',
+      'license': $scope.license,
       'user_id': userid
     }).$promise.then(function (data) {
       $scope.info = data.photos.photo;
@@ -55,6 +72,21 @@ ctl.controller('FlickrSearchCtrl', function ($scope, $routeParams, $location,
   $scope.clickSearch = function () {
     search();
   }
+
+  $scope.selectLicense = function (id) {
+    $scope.license = id;
+    search();
+  }
+
+  $scope.$watch('license', function () {
+    var lics = $scope.licList;
+    for (var x in lics) {
+      if (lics[x].id == $scope.license) {
+        $scope.licText = lics[x].name;
+        break;
+      }
+    }
+  });
 });
 
 ctl.controller('FlickrImageCtrl', function ($scope, $routeParams, $location, $sce,
@@ -89,7 +121,8 @@ ctl.controller('FlickrImageCtrl', function ($scope, $routeParams, $location, $sc
       'method': 'flickr.photos.getSizes'
     }).$promise.then(function (data) {
       var a = data.sizes.size;
-      $scope.url = a[a.length-1].source;
+      $scope.url_b = a[a.length-2].source;
+      $scope.url_o = a[a.length-1].source;
     });
   }
 

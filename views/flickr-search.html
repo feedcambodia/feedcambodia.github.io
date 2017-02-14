@@ -4,17 +4,17 @@
      make available to the public any content or code on this website without prior written permission from Chanthu Oeur.
     *****************************************************************************************************************-->
 
-<title>Flickr Search</title>
-<meta name="description" content="Flickr Search" />
+<title>Flickr Search {{search}}</title>
+<meta name="description" content="Flickr Search {{search}}" />
 
 <div class="container">
   <div class="row">
-    <div class="col-md-4 div-pad">
+    <!--<div class="col-md-2 div-pad">
       <div class="div div-margin">
         <h4 class="mar">Flickr Search</h4>
       </div>
-    </div>
-    <div class="col-md-8 div-pad">
+    </div>-->
+    <div class="col-md-7 div-pad">
       <div class="div div-margin martop1">
         <div class="input-group">
           <input ng-model="search" ng-keydown="goSearch($event)"
@@ -23,6 +23,20 @@
             <button class="btn btn-primary" type="button" ng-click="clickSearch()"><span class="glyphicon glyphicon-search"></span></button>
           </span>
         </div>
+      </div>
+    </div>
+    <div class="col-md-5 div-pad">
+      <div class="div2 div-margin">
+        <div class="dropdown inline">
+          <button class="btn btn-default dropdown-toggle stack-gap" type="button" id="dd" data-toggle="dropdown" aria-expanded="true">
+            {{licText}}
+            <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu" aria-labelledby="dd">
+            <li ng-repeat="l in licList" role="presentation"><a role="menuitem" tabindex="-1" ng-click="selectLicense(l.id)">{{l.name}}</a></li>
+          </ul>
+        </div>
+        <a href="/flickr/license" class="inline"><span class="btn btn-default stack-gap">?</span></a>
       </div>
     </div>
     <div class="col-md-12">

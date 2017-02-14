@@ -11,9 +11,9 @@
   <div class="row">
     <div class="col-sm-12 div-pad">
       <div class="div div-margin">
-        <a href="/ip/{{ip}}" ng-show=ip><span class="btn btn-default btn-margin">Location</span></a>
-        <a href="/log" ng-show=ip><span class="btn btn-default btn-margin">Show All</span></a>
-        <span class="btn btn-default btn-margin" ng-click="deleteAll()">Clear Log</span>
+        <a href="/ip/{{ip}}" ng-show=ip><span class="btn btn-default pop btn-margin">Location</span></a>
+        <a href="/log" ng-show=ip><span class="btn btn-default pop btn-margin">Show All</span></a>
+        <span class="btn btn-default pop btn-margin" ng-click="deleteAll()">Clear Log</span>
       </div>
     </div>
     <div class="col-sm-3 div-pad" ng-repeat="item in log.list | orderBy : '-date'">
