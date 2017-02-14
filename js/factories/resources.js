@@ -14,7 +14,7 @@ res.factory('EmailResource', function ($resource) {
   if (host == 'feedcambodia.com') {
     host = 'lahuna.com';
   }
-  return $resource('https://' + host + ':8000/email', {}, {
+  return $resource('https://lahuna.net/email', {}, {
     Send: {
         method: 'GET'
     }
@@ -27,7 +27,7 @@ res.factory('LogResource', function ($resource) {
   if (host == 'feedcambodia.com') {
     host = 'lahuna.com';
   }
-  return $resource('https://' + host + ':8000/log', {}, {
+  return $resource('https://lahuna.net/log', {}, {
     Get: {
       method: 'GET',
       params: { 'site': location.hostname }
