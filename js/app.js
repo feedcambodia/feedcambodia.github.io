@@ -193,5 +193,5 @@ app.config(
                 redirectTo: '/notfound'
             });
 
-          $locationProvider.html5Mode(true);
+          //$locationProvider.html5Mode(true);
   });

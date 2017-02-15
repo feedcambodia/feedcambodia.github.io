@@ -12,6 +12,26 @@ table {
   background-color: #d7eff4 !important;
 }
 
+.share-min {
+  min-height: 158px;
+}
+
+.head-min {
+  min-height: 235px;
+}
+
+.foot-min {
+  min-height: 235px;
+}
+
+.about-head-min {
+  min-height: 172px;
+}
+
+.about-foot-min {
+  min-height: 193px;
+}
+
 .div1 {
   background-color: #d7eff4;
   border-radius: 5px;
@@ -112,9 +132,9 @@ table {
   margin-bottom: 10px !important;
 }
 
-.story {
+/*.story {
   min-height: 229px;
-}
+}*/
 
 .side-pic {
   float: left;

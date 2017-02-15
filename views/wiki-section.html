@@ -12,12 +12,12 @@
     <div class="col-md-12 div-pad text-center" ng-show="msg">
       <div class="div-small div-margin">
         <h4 class="inline-block">{{msg}}</h4>
-        <a href="/wiki/image/{{title}}" ng-show="info"><span class="btn btn-default pop btn-margin">Photos</span></a>
+        <a href="/#/wiki/image/{{title}}" ng-show="info"><span class="btn btn-default pop btn-margin">Photos</span></a>
       </div>
     </div>
     <div class="col-sm-3 div-pad" ng-repeat="item in info">
       <div class="div div-margin">
-        <div><a href="/wiki/commons/{{title}}/{{item.index}}" class="wrap">{{item.line}}</a></div>
+        <div><a href="/#/wiki/commons/{{title}}/{{item.index}}" class="wrap">{{item.line}}</a></div>
       </div>
     </div>
   </div>
