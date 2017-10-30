@@ -64,7 +64,15 @@ app.config(
                 templateUrl: 'views/video.html',
                 controller: 'VideoCtrl'
             }).
-            when('/player/:playlistId', {
+            when('/video/search', {
+                templateUrl: 'views/video-search.html',
+                controller: 'VideoSearchCtrl'
+            }).
+            when('/player/playlist/:playlistId', {
+                templateUrl: 'views/player.html',
+                controller: 'PlayerCtrl'
+            }).
+            when('/player/video/:videoId', {
                 templateUrl: 'views/player.html',
                 controller: 'PlayerCtrl'
             }).

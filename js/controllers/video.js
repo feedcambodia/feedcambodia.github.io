@@ -19,3 +19,39 @@ ctl.controller('VideoCtrl', function ($scope, $routeParams, $location, PlaylistR
     'maxResults': 50
   });
 });
+
+ctl.controller('VideoSearchCtrl', function ($scope, $routeParams, $location, VideoResource, LogResource) {
+  LogResource.Post({
+    'path': $location.$$path
+  });
+
+  var sval = localStorage.getItem('youtube_search');
+  if (sval && sval.length > 0) {
+    $scope.search = sval;
+  } else {
+    $scope.search = 'Cambodia';
+  }
+  search();
+
+  function search() {
+    localStorage.setItem('youtube_search', $scope.search);
+    $scope.videos = VideoResource.Get({
+      'q': $scope.search,
+      'type': 'video',
+      'order': 'viewCount',
+      'part': 'snippet',
+      'maxResults': 50
+    });
+  }
+
+  $scope.goSearch = function ($event) {
+    var keypressed = $event.keyCode || $event.which;
+    if (keypressed == 13) {
+      search();
+    }
+  }
+
+  $scope.clickSearch = function () {
+    search();
+  }  
+});

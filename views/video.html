@@ -14,20 +14,22 @@
         <h3 class="martop inline-block">
           Videos
         </h3>
-        <p class="pull-right">
-          <a href="https://www.youtube.com/feedcambodia">
-            View on Youtube
-          </a>
-        </p>
+        <a class="btn btn-default pop btn-margin pull-right" href="https://www.youtube.com/feedcambodia">
+          View on Youtube
+        </a>
+        <a class="btn btn-default pop btn-margin pull-right" href="/#/video/search">
+          Search
+        </a>        
         <p>
-          Here are some videos explaining Cambodia's history during the Pol Pot Khmer Rouge
-          regime. They show what life was like for many Cambodians during that time period.
+          Here are some videos showing what life in Cambodia was like during the Pol Pot Khmer Rough
+          genocide. There are also some videos showing the current living conditions there.
+          Click Search to find more videos.
         </p>
       </div>
     </div>
     <div class="col-md-12">
       <span ng-repeat="item in videos.items | orderBy : 'snippet.title'" class="img-thumbnail thumb-video">
-        <a href="/#/player/{{item.id}}">
+        <a href="/#/player/playlist/{{item.id}}">
           <img ng-src="{{item.snippet.thumbnails.default.url | thumb}}" alt="{{item.snippet.title}}" class="img-responsive"/>
         </a>
         <div class="caption">

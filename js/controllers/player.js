@@ -13,6 +13,12 @@ ctl.controller('PlayerCtrl', function ($scope, $routeParams, $sce, $location, Lo
     'path': $location.$$path
   });
 
+  var videoId = $routeParams.videoId;
   var playlistId = $routeParams.playlistId;
-  $scope.videoUrl = $sce.trustAsResourceUrl("https://www.youtube.com/embed?listType=playlist&list=" + playlistId);
+
+  if (videoId) {
+    $scope.videoUrl = $sce.trustAsResourceUrl("https://www.youtube.com/embed/" + videoId + "?autoplay=1");
+  } else if (playlistId) {
+    $scope.videoUrl = $sce.trustAsResourceUrl("https://www.youtube.com/embed?listType=playlist&list=" + playlistId + "&autoplay=1");  
+  }  
 });

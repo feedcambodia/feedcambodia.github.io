@@ -115,6 +115,15 @@ res.factory('PlaylistResource', function ($resource) {
   });
 });
 
+res.factory('VideoResource', function ($resource) {
+  return $resource('https://www.googleapis.com/youtube/v3/search', {}, {
+    Get: {
+      method: 'GET',
+      params: { 'key': 'AIzaSyAhXUfc4ISI65ORq9BAUgrNTehsV6f_oIk'}
+    }
+  });
+});
+
 res.factory('WikiResource', function ($resource) {
   return $resource('https://en.wikipedia.org/w/api.php', {}, {
     Get: {
