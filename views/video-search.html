@@ -1,0 +1,39 @@
+<!--*****************************************************************************************************************
+     Copyright 2014 - 2017 Lahuna. All rights reserved.
+     You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
+     make available to the public any content or code on this website without prior written permission from Lahuna.
+    *****************************************************************************************************************-->
+
+<title>Video Search</title>
+<meta name="description" content="Search for Videos on Youtube." />
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 div-pad">
+      <div class="div div-margin">
+        <h4 class="mar">Youtube Search</h4>
+      </div>
+    </div>
+    <div class="col-md-8 div-pad">
+      <div class="div div-margin martop1">
+        <div class="input-group">
+          <input ng-model="search" ng-keydown="goSearch($event)"
+             type="text" class="form-control" placeholder="Search for...">
+          <span class="input-group-btn">
+            <button class="btn btn-primary" type="button" ng-click="clickSearch()"><span class="glyphicon glyphicon-search"></span></button>
+          </span>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <span ng-repeat="item in videos.items" class="img-thumbnail thumb-video">
+        <a href="/#/player/video/{{item.id.videoId}}">
+          <img ng-src="{{item.snippet.thumbnails.default.url | thumb}}" alt="{{item.snippet.title}}" class="img-responsive"/>
+        </a>
+        <div class="caption">
+          {{item.snippet.title}}
+        </div>
+      </span>
+    </div>
+  </div>
+</div>
