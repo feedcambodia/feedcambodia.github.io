@@ -24,6 +24,10 @@ var app = angular.module('feed', [
 app.config(
     function ($routeProvider, $locationProvider) {
         $routeProvider.
+            when('/learn', {
+                templateUrl: 'views/learn.html',
+                controller: 'MainCtrl'
+            }).
             when('/flickr', {
                 templateUrl: 'views/flickr-search.html',
                 controller: 'FlickrSearchCtrl'
