@@ -1,5 +1,5 @@
 ﻿/******************************************************************************************************************
-Copyright 2014 - 2017 Lahuna. All rights reserved.
+Copyright 2014-2018 Lahuna. All rights reserved.
 You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
 make available to the public any content or code on this website without prior written permission from Lahuna.
 ******************************************************************************************************************/
@@ -230,9 +230,7 @@ table {
 }
 
 .div-margin {
-  margin-bottom: 10px;
-  margin-left: 5px;
-  margin-right: 5px;
+  margin: 5px;
 }
 
 .div-margin-right {
@@ -275,13 +273,13 @@ input, textarea, .input-group-addon, .btn-default {
 
 .thumb {
   max-width: 140px;
-  margin: 10px;
+  margin: 5px;
   vertical-align: top;
 }
 
 .thumb-video {
   max-width: 130px;
-  margin: 10px;
+  margin: 5px;
   vertical-align: top;
 }
 
@@ -371,7 +369,7 @@ input[type=range] {
 }
 
 .navbar {
-  margin-bottom: 10px !important;
+  margin-bottom: 0px !important;
   /*background-color: #328ea3 !important;*/
 }
 
@@ -663,9 +661,9 @@ input[type=range] {
     margin-top: 0px;
 }
 
-.row {
+/*.row {
     margin-bottom: 10px;
-}
+}*/
 
 .aTitle {
     font-weight: bold;

@@ -6,25 +6,16 @@ html {
 }
 body {
   /* Margin bottom by footer height */
-  margin-bottom: 60px;
+  margin-bottom: 70px;
 }
 .footer {
   position: absolute;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
-  height: 50px;
+  height: 70px;
   background-color: #f5f5f5;
 }
-.footer-photo {
-  position: absolute;
-  bottom: 50px;
-  width: 100%;
-  /* Set the fixed height of the footer here */
-  height: 50px;
-  /*background-color: #f5f5f5*/;
-}
-
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -40,13 +31,4 @@ body > .container {
 .footer > .container {
   padding-right: 15px;
   padding-left: 15px;
-}
-
-.footer-photo > .container {
-  padding-right: 15px;
-  padding-left: 15px;
-}
-
-code {
-  font-size: 80%;
 }

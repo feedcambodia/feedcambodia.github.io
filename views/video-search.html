@@ -1,5 +1,5 @@
 <!--*****************************************************************************************************************
-     Copyright 2014 - 2017 Lahuna. All rights reserved.
+     Copyright 2014-2018 Lahuna. All rights reserved.
      You may not copy, reproduce, republish, disassemble, decompile, reverse engineer, post, broadcast, transmit, or
      make available to the public any content or code on this website without prior written permission from Lahuna.
     *****************************************************************************************************************-->
@@ -25,7 +25,7 @@
         </div>
       </div>
     </div>
-    <div class="col-md-12">
+    <div class="col-md-12" style="padding: 0px">
       <span ng-repeat="item in videos.items" class="img-thumbnail thumb-video">
         <a href="/#/player/video/{{item.id.videoId}}">
           <img ng-src="{{item.snippet.thumbnails.default.url | thumb}}" alt="{{item.snippet.title}}" class="img-responsive"/>
