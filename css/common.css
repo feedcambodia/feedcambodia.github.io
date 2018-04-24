@@ -259,10 +259,6 @@ table {
   background-color: #d7eff4;
 }
 
-.footer {
-  background-color: #d7eff4 !important;
-}
-
 input, textarea, .input-group-addon, .btn-default {
   background-color: #ebf7f9 !important;
 }
