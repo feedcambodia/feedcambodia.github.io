@@ -59,6 +59,10 @@ app.config(
             when('/ouw', {
                 templateUrl: 'views/ouw.html',
                 controller: 'MainCtrl'
+			}).
+			when('/kimlean', {
+                templateUrl: 'views/kimlean.html',
+                controller: 'MainCtrl'
             }).
             when('/photo', {
                 templateUrl: 'views/photo.html',
