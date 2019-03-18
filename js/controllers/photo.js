@@ -8,14 +8,17 @@
 
 var ctl = angular.module('PhotoController', ['Resources']);
 
-ctl.controller('PhotoCtrl', function ($scope, $routeParams, $location, PicasaAlbumFeedResource, LogResource) {
+ctl.controller('PhotoCtrl', function ($scope, $location, FlickrStreamResource, LogResource) {
   LogResource.Post({
     'path': $location.$$path
   });
 
-  $scope.photos = PicasaAlbumFeedResource.Get({
-    'kind': 'photo',
-    'start-index': 1,
-    'max-results': 50
-  });
+  FlickrStreamResource.Get({
+    'method': 'flickr.people.getPublicPhotos',
+		'extras': 'url_m, description',
+		'sort': 'interestingness-desc',
+		'user_id': '147534410@N06'
+  }).$promise.then(function (data) {
+		$scope.photos = data.photos.photo;
+	});
 });

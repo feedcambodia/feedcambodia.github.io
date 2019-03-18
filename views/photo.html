@@ -15,8 +15,8 @@
           Photos
         </h3>
         <p class="pull-right">
-          <a href="https://plus.google.com/photos/112973952418146798615/album/6340765808908508833">
-            View on Google+
+          <a href="https://www.flickr.com/photos/feedcambodia">
+            View on Flickr
           </a>
         </p>
         <p>
@@ -26,14 +26,14 @@
       </div>
     </div>
     <div class="col-md-12" style="padding: 0px">
-      <span ng-repeat="item in photos.feed.entry" class="img-thumbnail thumb">
-        <a href="/#/media?src={{item.media$group.media$thumbnail[0].url | full}}&amp;alt={{item.summary.$t}}">
-          <img ng-src="{{item.media$group.media$thumbnail[0].url | thumb}}" alt="{{item.summary.$t}}" class="img-responsive"/>
+      <span ng-repeat="item in photos" class="img-thumbnail thumb">
+        <a href="/#/flickr/{{item.id}}">
+          <img ng-src="{{item.url_m | thumb}}" alt="{{item.title}}" class="img-responsive"/>
         </a>
         <div class="caption">
-          {{item.summary.$t}}
+          {{item.description._content}}
         </div>
       </span>
-    </div>
+		</div>
   </div>
 </div>

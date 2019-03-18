@@ -43,14 +43,13 @@ res.factory('LogResource', function ($resource) {
   });
 });
 
-res.factory('PicasaAlbumFeedResource', function ($resource) {
-  return $resource('https://picasaweb.google.com/data/feed/api/user/112973952418146798615/albumid/6340765808908508833', {}, {
+res.factory('FlickrStreamResource', function ($resource) {
+  return $resource('https://api.flickr.com/services/rest', {}, {
     Get: {
-      method: 'JSONP',
-      isArray: false,
-      params: { 'key': 'AIzaSyAhXUfc4ISI65ORq9BAUgrNTehsV6f_oIk',
-                'alt': 'json',
-                'callback': 'JSON_CALLBACK' }
+      method: 'GET',
+      params: { 'api_key': '989da93e9746df76305938efccf41799',
+                'format': 'json',
+                'nojsoncallback': 1 }
     }
   });
 });
@@ -73,22 +72,6 @@ res.factory('FlickrLicenseResource', function ($resource) {
     }
   });
 });
-
-/*res.factory('PicasaAlbumFeedResource', function ($resource) {
-  var host = location.hostname;
-  if (host == 'feedcambodia.com') {
-    host = 'lahuna.com';
-  }
-  return function (albumId) {
-    var resource = 'https://picasaweb.google.com/data/feed/api/user/112973952418146798615/albumid/' + albumId;
-    return $resource('https://' + host + ':8000/other', {}, {
-      Get: {
-        method: 'GET',
-        params: { 'resource': resource, 'alt': 'json' }
-      }
-    });
-  }
-});*/
 
 /*res.factory('PlaylistResource', function ($resource) {
   var host = location.hostname;
