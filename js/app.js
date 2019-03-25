@@ -9,7 +9,8 @@
 var app = angular.module('feed', [
   'ngRoute',
   'MainController',
-  'ContactController',
+	'ContactController',
+	'ReserveController',
   'PhotoController',
   'VideoController',
   'PlayerController',
@@ -56,11 +57,7 @@ app.config(
                 templateUrl: 'views/chanthu.html',
                 controller: 'MainCtrl'
             }).
-            when('/ouw', {
-                templateUrl: 'views/ouw.html',
-                controller: 'MainCtrl'
-			}).
-			when('/kimlean', {
+						when('/kimlean', {
                 templateUrl: 'views/kimlean.html',
                 controller: 'MainCtrl'
             }).
@@ -107,7 +104,11 @@ app.config(
             when('/contact', {
                 templateUrl: 'views/contact.html',
                 controller: 'ContactCtrl'
-            }).
+						}).
+						when('/reserve', {
+							templateUrl: 'views/reserve.html',
+							controller: 'ReserveCtrl'
+						}).
             when('/privacy', {
                 templateUrl: 'views/privacy.html',
                 controller: 'MainCtrl'
