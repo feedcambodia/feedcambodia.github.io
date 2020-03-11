@@ -9,10 +9,7 @@
 var ctl = angular.module('FlickrController', ['Resources']);
 
 ctl.controller('FlickrSearchCtrl', function ($scope, $routeParams, $location, $sce,
-  LogResource, FlickrResource, FlickrLicenseResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+  FlickrResource, FlickrLicenseResource) {
 
   FlickrLicenseResource.Get()
   .$promise.then(function (result) {
@@ -91,10 +88,7 @@ ctl.controller('FlickrSearchCtrl', function ($scope, $routeParams, $location, $s
 });
 
 ctl.controller('FlickrImageCtrl', function ($scope, $routeParams, $location, $sce,
-  LogResource, FlickrResource, FlickrLicenseResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+  FlickrResource, FlickrLicenseResource) {
 
   FlickrResource.Get({
     'photo_id': $routeParams.id,

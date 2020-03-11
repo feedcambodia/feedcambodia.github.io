@@ -8,22 +8,16 @@
 
 var ctl = angular.module('VideoController', ['Resources']);
 
-ctl.controller('VideoCtrl', function ($scope, $routeParams, $location, PlaylistResource, LogResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('VideoCtrl', function ($scope, PlaylistResource) {
 
-  $scope.videos = PlaylistResource.Get({
+    $scope.videos = PlaylistResource.Get({
     'part': 'snippet',
     'channelId': 'UCO3EB-nz80N1VHyYaG81G3A',
     'maxResults': 50
   });
 });
 
-ctl.controller('VideoSearchCtrl', function ($scope, $routeParams, $location, VideoResource, LogResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('VideoSearchCtrl', function ($scope, VideoResource) {
 
   var sval = localStorage.getItem('youtube_search');
   if (sval && sval.length > 0) {

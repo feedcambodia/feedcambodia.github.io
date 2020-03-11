@@ -8,41 +8,6 @@
 
 var res = angular.module('Resources', ['ngResource']);
 
-// Send Email
-res.factory('EmailResource', function ($resource) {
-  var host = location.hostname;
-  if (host == 'feedcambodia.com') {
-    host = 'lahuna.com';
-  }
-  return $resource('https://lahuna.net/email', {}, {
-    Send: {
-        method: 'GET'
-    }
-  });
-});
-
-// Log
-res.factory('LogResource', function ($resource) {
-  var host = location.hostname;
-  if (host == 'feedcambodia.com') {
-    host = 'lahuna.com';
-  }
-  return $resource('https://lahuna.net/log', {}, {
-    Get: {
-      method: 'GET',
-      params: { 'site': location.hostname }
-    },
-    Post: {
-      method: 'POST',
-      params: { 'site': location.hostname }
-    },
-    Delete: {
-      method: 'DELETE',
-      params: { 'site': location.hostname }
-    }
-  });
-});
-
 res.factory('FlickrStreamResource', function ($resource) {
   return $resource('https://api.flickr.com/services/rest', {}, {
     Get: {

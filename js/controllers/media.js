@@ -8,10 +8,6 @@
 
 var ctl = angular.module('MediaController', ['Resources']);
 
-ctl.controller('MediaCtrl', function ($scope, $sce, $routeParams, $location, LogResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
-
+ctl.controller('MediaCtrl', function ($scope, $location) {
   $scope.q = $location.search();
 });

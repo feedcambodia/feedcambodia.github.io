@@ -8,11 +8,7 @@
 
 var ctl = angular.module('WikiController', ['Resources']);
 
-ctl.controller('WikiSearchCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('WikiSearchCtrl', function ($scope, WikiResource) {
 
   var sval = localStorage.getItem('wiki_search');
   if (sval && sval.length > 0) {
@@ -53,11 +49,7 @@ ctl.controller('WikiSearchCtrl', function ($sce, $scope, $routeParams, $location
   }
 });
 
-ctl.controller('WikiCommonsSearchCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('WikiCommonsSearchCtrl', function ($scope, WikiResource) {
 
   var sval = localStorage.getItem('wiki_photo_search');
   if (sval && sval.length > 0) {
@@ -104,11 +96,7 @@ ctl.controller('WikiCommonsSearchCtrl', function ($sce, $scope, $routeParams, $l
   }
 });
 
-ctl.controller('WikiPageCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('WikiPageCtrl', function ($sce, $scope, $routeParams, WikiResource) {
 
   $scope.title = $routeParams.title;
 
@@ -128,11 +116,7 @@ ctl.controller('WikiPageCtrl', function ($sce, $scope, $routeParams, $location,
   });
 });
 
-ctl.controller('WikiSectionCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('WikiSectionCtrl', function ($scope, $routeParams, WikiResource) {
 
   $scope.title = $routeParams.title;
 
@@ -157,11 +141,7 @@ ctl.controller('WikiSectionCtrl', function ($sce, $scope, $routeParams, $locatio
   });
 });
 
-ctl.controller('WikiExtractCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('WikiExtractCtrl', function ($sce, $scope, $routeParams, WikiResource) {
 
   $scope.title = $routeParams.title;
 
@@ -188,11 +168,7 @@ ctl.controller('WikiExtractCtrl', function ($sce, $scope, $routeParams, $locatio
   }
 });
 
-ctl.controller('WikiCommonsCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('WikiCommonsCtrl', function ($sce, $scope, $routeParams, WikiResource) {
 
   var title;
   var username = $routeParams.username
@@ -234,11 +210,7 @@ ctl.controller('WikiCommonsCtrl', function ($sce, $scope, $routeParams, $locatio
   }
 });
 
-ctl.controller('WikiLinkCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('WikiLinkCtrl', function ($routeParams, WikiResource) {
 
   WikiResource.Get({
     titles: $routeParams.title,
@@ -257,11 +229,7 @@ ctl.controller('WikiLinkCtrl', function ($sce, $scope, $routeParams, $location,
   }
 });
 
-ctl.controller('WikiComImageCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('WikiComImageCtrl', function ($sce, $scope, $routeParams, WikiResource) {
 
   var t = $routeParams.title;
   if (t.indexOf('File:') == -1) {
@@ -357,11 +325,7 @@ ctl.controller('WikiComImageCtrl', function ($sce, $scope, $routeParams, $locati
   }
 });
 
-ctl.controller('WikiImageCtrl', function ($sce, $scope, $routeParams, $location,
-  LogResource, WikiResource, WikiExcludeResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('WikiImageCtrl', function ($scope, $routeParams, WikiResource, WikiExcludeResource) {
 
   /*WikiResource.Get({
     pageids: 334751,

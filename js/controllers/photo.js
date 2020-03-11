@@ -8,10 +8,7 @@
 
 var ctl = angular.module('PhotoController', ['Resources']);
 
-ctl.controller('PhotoCtrl', function ($scope, $location, FlickrStreamResource, LogResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('PhotoCtrl', function ($scope, FlickrStreamResource) {
 
   FlickrStreamResource.Get({
     'method': 'flickr.people.getPublicPhotos',

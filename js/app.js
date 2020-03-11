@@ -9,13 +9,9 @@
 var app = angular.module('feed', [
   'ngRoute',
   'MainController',
-	'ContactController',
-	'ReserveController',
   'PhotoController',
   'VideoController',
   'PlayerController',
-  'LogController',
-  'IpController',
   'MediaController',
   'WikiController',
   'FlickrController',
@@ -49,15 +45,11 @@ app.config(
                 templateUrl: 'views/about.html',
                 controller: 'MainCtrl'
             }).
-            when('/organization', {
-                templateUrl: 'views/organization.html',
-                controller: 'MainCtrl'
-            }).
-            when('/chanthu', {
+             when('/chanthu', {
                 templateUrl: 'views/chanthu.html',
                 controller: 'MainCtrl'
             }).
-						when('/kimlean', {
+			when('/kimlean', {
                 templateUrl: 'views/kimlean.html',
                 controller: 'MainCtrl'
             }).
@@ -85,30 +77,14 @@ app.config(
                 templateUrl: 'views/player0.html',
                 controller: 'PlayerCtrl'
             }).
-            when('/social', {
-                templateUrl: 'views/social.html',
-                controller: 'MainCtrl'
-            }).
-            when('/share', {
-                templateUrl: 'views/share.html',
-                controller: 'MainCtrl'
-            }).
-            when('/budget', {
-                templateUrl: 'views/budget.html',
-                controller: 'MainCtrl'
-            }).
             when('/media?:src', {
                 templateUrl: 'views/media.html',
                 controller: 'MediaCtrl'
             }).
             when('/contact', {
                 templateUrl: 'views/contact.html',
-                controller: 'ContactCtrl'
-						}).
-						when('/reserve', {
-							templateUrl: 'views/reserve.html',
-							controller: 'ReserveCtrl'
-						}).
+                controller: 'MainCtrl'
+			}).
             when('/privacy', {
                 templateUrl: 'views/privacy.html',
                 controller: 'MainCtrl'
@@ -121,32 +97,8 @@ app.config(
                 templateUrl: 'views/notfound.html',
                 controller: 'MainCtrl'
             }).
-            when('/success', {
-                templateUrl: 'views/success.html',
-                controller: 'MainCtrl'
-            }).
             when('/cancel', {
                 templateUrl: 'views/cancel.html',
-                controller: 'MainCtrl'
-            }).
-            when('/log', {
-                templateUrl: 'views/log.html',
-                controller: 'LogCtrl'
-            }).
-            when('/log/:ip', {
-                templateUrl: 'views/log.html',
-                controller: 'LogCtrl'
-            }).
-            when('/ip', {
-                templateUrl: 'views/ip.html',
-                controller: 'IpCtrl'
-            }).
-            when('/ip/:ip', {
-                templateUrl: 'views/ip.html',
-                controller: 'IpCtrl'
-            }).
-            when('/facebook', {
-                templateUrl: 'views/facebook.html',
                 controller: 'MainCtrl'
             }).
             when('/comment', {

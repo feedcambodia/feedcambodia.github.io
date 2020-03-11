@@ -8,10 +8,7 @@
 
 var ctl = angular.module('PlayerController', ['Resources']);
 
-ctl.controller('PlayerCtrl', function ($scope, $routeParams, $sce, $location, LogResource) {
-  LogResource.Post({
-    'path': $location.$$path
-  });
+ctl.controller('PlayerCtrl', function ($scope, $routeParams, $sce) {
 
   var videoId = $routeParams.videoId;
   var playlistId = $routeParams.playlistId;
