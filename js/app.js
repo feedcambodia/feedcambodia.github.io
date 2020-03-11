@@ -73,10 +73,6 @@ app.config(
                 templateUrl: 'views/player.html',
                 controller: 'PlayerCtrl'
             }).
-            when('/player0', {
-                templateUrl: 'views/player0.html',
-                controller: 'PlayerCtrl'
-            }).
             when('/media?:src', {
                 templateUrl: 'views/media.html',
                 controller: 'MediaCtrl'
@@ -113,13 +109,6 @@ app.config(
                 templateUrl: 'views/wiki-link.html',
                 controller: 'WikiLinkCtrl'
             }).
-            /*when('/wiki/commons/User::username', {
-              redirectTo: '/wiki/user/:username'
-            }).
-            when('/wiki/user/:username', {
-              templateUrl: 'views/wiki-extract.html',
-              controller: 'WikiCommonsCtrl'
-            }).*/
             when('/wiki/commons/image/:title', {
                 templateUrl: 'views/wiki-com-image.html',
                 controller: 'WikiComImageCtrl'
@@ -148,12 +137,6 @@ app.config(
                 templateUrl: 'views/wiki-section.html',
                 controller: 'WikiSectionCtrl'
             }).
-            /*when('/wiki/File::title', {
-                redirectTo: '/wiki/commons/image/File::title'
-            }).
-            when('/wiki/:title', {
-                redirectTo: '/wiki/page/:title'
-            }).*/
             when('/wiki', {
                 templateUrl: 'views/wiki.html',
                 controller: 'MainCtrl'
@@ -161,6 +144,4 @@ app.config(
             otherwise({
                 redirectTo: '/notfound'
             });
-
-          //$locationProvider.html5Mode(true);
   });
