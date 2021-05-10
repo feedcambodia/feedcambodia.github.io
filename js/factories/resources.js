@@ -42,7 +42,7 @@ res.factory('PlaylistResource', function ($resource) {
   return $resource('https://www.googleapis.com/youtube/v3/playlists', {}, {
     Get: {
       method: 'GET',
-      params: { 'key': 'AIzaSyAhXUfc4ISI65ORq9BAUgrNTehsV6f_oIk'}
+      params: { 'key': 'AIzaSyC3sJLwBtPI63gwsFXq3lEJsCAbjGVCyZ8'}
     }
   });
 });
@@ -51,7 +51,7 @@ res.factory('VideoResource', function ($resource) {
   return $resource('https://www.googleapis.com/youtube/v3/search', {}, {
     Get: {
       method: 'GET',
-      params: { 'key': 'AIzaSyAhXUfc4ISI65ORq9BAUgrNTehsV6f_oIk'}
+      params: { 'key': 'AIzaSyC3sJLwBtPI63gwsFXq3lEJsCAbjGVCyZ8'}
     }
   });
 });
